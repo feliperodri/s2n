@@ -521,6 +521,7 @@ int s2n_hash_allow_md5_for_fips(struct s2n_hash_state *state)
 
 int s2n_hash_init(struct s2n_hash_state *state, s2n_hash_algorithm alg)
 {
+    PRECONDITION_POSIX(s2n_hash_state_is_valid(state));
     /* Ensure that hash_impl is set, as it may have been reset for s2n_hash_state on s2n_connection_wipe.
      * When in FIPS mode, the EVP API's must be used for hashes.
      */
@@ -531,7 +532,7 @@ int s2n_hash_init(struct s2n_hash_state *state, s2n_hash_algorithm alg)
         /* s2n will continue to initialize an "unavailable" hash when s2n is in FIPS mode and
          * FIPS is forcing the hash to be made available.
          */
-        notnull_check(state->hash_impl->init);
+        notnull_check_ptr(state->hash_impl->init);
 
         return state->hash_impl->init(state, alg);
     } else {
