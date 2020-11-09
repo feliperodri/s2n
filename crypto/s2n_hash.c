@@ -258,7 +258,7 @@ static int s2n_low_level_hash_free(struct s2n_hash_state *state)
      * being used. For the s2n_low_level_hash implementation, free is a no-op.
      */
     state->is_ready_for_input = 0;
-    return 0;
+    return S2N_SUCCESS;
 }
 
 static int s2n_evp_hash_new(struct s2n_hash_state *state)
@@ -454,7 +454,7 @@ static int s2n_evp_hash_free(struct s2n_hash_state *state)
     state->digest.high_level.evp.ctx = NULL;
     state->digest.high_level.evp_md5_secondary.ctx = NULL;
     state->is_ready_for_input = 0;
-    return 0;
+    return S2N_SUCCESS;
 }
 
 static const struct s2n_hash s2n_low_level_hash = {
@@ -586,7 +586,7 @@ int s2n_hash_free(struct s2n_hash_state *state)
      */
     GUARD(s2n_hash_set_impl(state));
 
-    notnull_check(state->hash_impl->free);
+    notnull_check_ptr(state->hash_impl->free);
 
     return state->hash_impl->free(state);
 }
