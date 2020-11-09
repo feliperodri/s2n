@@ -581,6 +581,10 @@ int s2n_hash_reset(struct s2n_hash_state *state)
 
 int s2n_hash_free(struct s2n_hash_state *state)
 {
+    if (state == NULL)
+    {
+        return S2N_SUCCESS;
+    }
     /* Ensure that hash_impl is set, as it may have been reset for s2n_hash_state on s2n_connection_wipe.
      * When in FIPS mode, the EVP API's must be used for hashes.
      */
@@ -593,10 +597,12 @@ int s2n_hash_free(struct s2n_hash_state *state)
 
 int s2n_hash_get_currently_in_hash_total(struct s2n_hash_state *state, uint64_t *out)
 {
+    PRECONDITION_POSIX(s2n_hash_state_is_valid(state));
+    ENSURE_POSIX_REF(out);
     S2N_ERROR_IF(!state->is_ready_for_input, S2N_ERR_HASH_NOT_READY);
 
     *out = state->currently_in_hash;
-    return 0;
+    return S2N_SUCCESS;
 }
 
 
@@ -610,5 +616,5 @@ int s2n_hash_const_time_get_currently_in_hash_block(struct s2n_hash_state *state
     /* Requires that hash_block_size is a power of 2. This is true for all hashes we currently support
      * If this ever becomes untrue, this would require fixing this*/
     *out = state->currently_in_hash & (hash_block_size - 1);
-    return 0;
+    return S2N_SUCCESS;
 }
