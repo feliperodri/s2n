@@ -24,6 +24,7 @@
 
 #define EVP_MAX_MD_SIZE 64  /* longest known is SHA512 */
 #define EVP_PKEY_HKDF 1036  // reference from obj_mac.h
+#define EVP_MD_CTX_FLAG_NON_FIPS_ALLOW 0x0008 /* Allow use of non FIPS digest in FIPS mode. */
 
 EVP_PKEY *    EVP_PKEY_new(void);
 EC_KEY *      EVP_PKEY_get0_EC_KEY(EVP_PKEY *pkey);
