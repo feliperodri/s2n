@@ -568,12 +568,13 @@ int s2n_hash_copy(struct s2n_hash_state *to, struct s2n_hash_state *from)
 
 int s2n_hash_reset(struct s2n_hash_state *state)
 {
+    PRECONDITION_POSIX(s2n_hash_state_is_valid(state));
     /* Ensure that hash_impl is set, as it may have been reset for s2n_hash_state on s2n_connection_wipe.
      * When in FIPS mode, the EVP API's must be used for hashes.
      */
     GUARD(s2n_hash_set_impl(state));
 
-    notnull_check(state->hash_impl->reset);
+    notnull_check_ptr(state->hash_impl->reset);
 
     return state->hash_impl->reset(state);
 }
