@@ -19,6 +19,7 @@
 #include <cbmc_proof/proof_allocators.h>
 
 #include "api/s2n.h"
+#include "crypto/s2n_hash.h"
 #include "stuffer/s2n_stuffer.h"
 #include "utils/s2n_array.h"
 #include "utils/s2n_blob.h"
@@ -90,3 +91,8 @@ bool s2n_array_is_bounded(const struct s2n_array *array, const size_t max_len, c
  * Checks whether s2n_set is bounded by max_len and max_element_size.
  */
 bool s2n_set_is_bounded(const struct s2n_set *set, const size_t max_len, const size_t max_element_size);
+
+/*
+ * Properly allocates s2n_hash_state for CBMC proofs.
+ */
+struct s2n_hash_state* cbmc_allocate_s2n_hash_state();
