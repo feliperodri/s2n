@@ -189,9 +189,10 @@ static int s2n_low_level_hash_update(struct s2n_hash_state *state, const void *d
         S2N_ERROR(S2N_ERR_HASH_INVALID_ALGORITHM);
     }
 
+    S2N_ERROR_IF(size > (UINT64_MAX - state->currently_in_hash), S2N_ERR_INTEGER_OVERFLOW);
     state->currently_in_hash += size;
 
-    return 0;
+    return S2N_SUCCESS;
 }
 
 static int s2n_low_level_hash_digest(struct s2n_hash_state *state, void *out, uint32_t size)
@@ -342,9 +343,10 @@ static int s2n_evp_hash_update(struct s2n_hash_state *state, const void *data, u
         S2N_ERROR(S2N_ERR_HASH_INVALID_ALGORITHM);
     }
 
+    S2N_ERROR_IF(size > (UINT64_MAX - state->currently_in_hash), S2N_ERR_INTEGER_OVERFLOW);
     state->currently_in_hash += size;
 
-    return 0;
+    return S2N_SUCCESS;
 }
 
 static int s2n_evp_hash_digest(struct s2n_hash_state *state, void *out, uint32_t size)
@@ -539,7 +541,9 @@ int s2n_hash_init(struct s2n_hash_state *state, s2n_hash_algorithm alg)
 
 int s2n_hash_update(struct s2n_hash_state *state, const void *data, uint32_t size)
 {
-    notnull_check(state->hash_impl->update);
+    PRECONDITION_POSIX(s2n_hash_state_is_valid(state));
+    ENSURE_POSIX_REF(data);
+    notnull_check_ptr(state->hash_impl->update);
 
     return state->hash_impl->update(state, data, size);
 }
