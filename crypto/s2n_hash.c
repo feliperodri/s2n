@@ -102,7 +102,8 @@ bool s2n_hash_is_available(s2n_hash_algorithm alg)
 
 int s2n_hash_is_ready_for_input(struct s2n_hash_state *state)
 {
-  return state->is_ready_for_input;
+    PRECONDITION_POSIX(s2n_hash_state_is_valid(state));
+    return state->is_ready_for_input;
 }
 
 static int s2n_low_level_hash_new(struct s2n_hash_state *state)
