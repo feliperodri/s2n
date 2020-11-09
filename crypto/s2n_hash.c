@@ -550,7 +550,9 @@ int s2n_hash_update(struct s2n_hash_state *state, const void *data, uint32_t siz
 
 int s2n_hash_digest(struct s2n_hash_state *state, void *out, uint32_t size)
 {
-    notnull_check(state->hash_impl->digest);
+    PRECONDITION_POSIX(s2n_hash_state_is_valid(state));
+    ENSURE_POSIX_REF(out);
+    notnull_check_ptr(state->hash_impl->digest);
 
     return state->hash_impl->digest(state, out, size);
 }
