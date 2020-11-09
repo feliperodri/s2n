@@ -559,7 +559,9 @@ int s2n_hash_digest(struct s2n_hash_state *state, void *out, uint32_t size)
 
 int s2n_hash_copy(struct s2n_hash_state *to, struct s2n_hash_state *from)
 {
-    notnull_check(from->hash_impl->copy);
+    PRECONDITION_POSIX(s2n_hash_state_is_valid(to));
+    PRECONDITION_POSIX(s2n_hash_state_is_valid(from));
+    notnull_check_ptr(from->hash_impl->copy);
 
     return from->hash_impl->copy(to, from);
 }
