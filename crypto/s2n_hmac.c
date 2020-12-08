@@ -73,14 +73,13 @@ int s2n_hmac_digest_size(s2n_hmac_algorithm hmac_alg, uint8_t *out)
     return S2N_SUCCESS;
 }
 
-/* Return 1 if hmac algorithm is available, 0 otherwise. */
 bool s2n_hmac_is_available(s2n_hmac_algorithm hmac_alg)
 {
     switch(hmac_alg) {
     case S2N_HMAC_MD5:
     case S2N_HMAC_SSLv3_MD5:
     case S2N_HMAC_SSLv3_SHA1:
-        /* Set is_available to 0 if in FIPS mode, as MD5/SSLv3 algs are not available in FIPS mode. */
+        /* Returns false if in FIPS mode, as MD5/SSLv3 algs are not available in FIPS mode. */
         return !s2n_is_in_fips_mode();
     case S2N_HMAC_NONE:
     case S2N_HMAC_SHA1:
