@@ -1,0 +1,24 @@
+{
+  "viewer-reachable": {
+    "reachable": {
+      "tests/cbmc/proofs/s2n_stuffer_wipe/s2n_stuffer_wipe_harness.c": [
+        "s2n_stuffer_wipe_harness"
+      ],
+      "stuffer/s2n_stuffer.c": [
+        "s2n_stuffer_validate",
+        "s2n_stuffer_wipe"
+      ],
+      "tests/cbmc/sources/make_common_datastructures.c": [
+        "cbmc_allocate_s2n_stuffer",
+        "ensure_s2n_blob_has_allocated_fields",
+        "ensure_s2n_stuffer_has_allocated_fields"
+      ],
+      "utils/s2n_blob.c": [
+        "s2n_blob_validate"
+      ],
+      "utils/s2n_result.c": [
+        "s2n_result_is_ok"
+      ]
+    }
+  }
+}

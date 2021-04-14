@@ -1,0 +1,2696 @@
+{
+  "viewer-property": {
+    "properties": {
+      "s2n_stuffer_wipe_harness.assertion.1": {
+        "class": "assertion",
+        "description": "assertion s2n_result_is_ok(s2n_stuffer_validate(stuffer))",
+        "expression": "!((signed long int)(signed long int)!(return_value_s2n_result_is_ok != FALSE) != 0l)",
+        "location": {
+          "file": "tests/cbmc/proofs/s2n_stuffer_wipe/s2n_stuffer_wipe_harness.c",
+          "function": "s2n_stuffer_wipe_harness",
+          "line": 30
+        }
+      },
+      "s2n_stuffer_wipe_harness.pointer_dereference.1": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in stuffer->high_water_mark",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(((uint32_t *)NULL)))",
+        "location": {
+          "file": "tests/cbmc/proofs/s2n_stuffer_wipe/s2n_stuffer_wipe_harness.c",
+          "function": "s2n_stuffer_wipe_harness",
+          "line": 31
+        }
+      },
+      "s2n_stuffer_wipe_harness.pointer_dereference.2": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in stuffer->high_water_mark",
+        "expression": "!IS_INVALID_POINTER(stuffer)",
+        "location": {
+          "file": "tests/cbmc/proofs/s2n_stuffer_wipe/s2n_stuffer_wipe_harness.c",
+          "function": "s2n_stuffer_wipe_harness",
+          "line": 31
+        }
+      },
+      "s2n_stuffer_wipe_harness.pointer_dereference.3": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in stuffer->high_water_mark",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "tests/cbmc/proofs/s2n_stuffer_wipe/s2n_stuffer_wipe_harness.c",
+          "function": "s2n_stuffer_wipe_harness",
+          "line": 31
+        }
+      },
+      "s2n_stuffer_wipe_harness.pointer_dereference.4": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in stuffer->high_water_mark",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "tests/cbmc/proofs/s2n_stuffer_wipe/s2n_stuffer_wipe_harness.c",
+          "function": "s2n_stuffer_wipe_harness",
+          "line": 31
+        }
+      },
+      "s2n_stuffer_wipe_harness.pointer_dereference.5": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside dynamic object bounds in stuffer->high_water_mark",
+        "expression": "!IS_DYNAMIC_OBJECT(stuffer) || POINTER_OFFSET(stuffer) + 32l >= 0l && OBJECT_SIZE(stuffer) >= (unsigned long int)POINTER_OFFSET(stuffer) + 36ul",
+        "location": {
+          "file": "tests/cbmc/proofs/s2n_stuffer_wipe/s2n_stuffer_wipe_harness.c",
+          "function": "s2n_stuffer_wipe_harness",
+          "line": 31
+        }
+      },
+      "s2n_stuffer_wipe_harness.pointer_dereference.6": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in stuffer->high_water_mark",
+        "expression": "IS_DYNAMIC_OBJECT(stuffer) || POINTER_OFFSET(stuffer) + 32l >= 0l && OBJECT_SIZE(stuffer) >= (unsigned long int)POINTER_OFFSET(stuffer) + 36ul",
+        "location": {
+          "file": "tests/cbmc/proofs/s2n_stuffer_wipe/s2n_stuffer_wipe_harness.c",
+          "function": "s2n_stuffer_wipe_harness",
+          "line": 31
+        }
+      },
+      "s2n_stuffer_wipe_harness.pointer_dereference.7": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in stuffer->high_water_mark",
+        "expression": "!(POINTER_OBJECT(((uint32_t *)NULL)) == POINTER_OBJECT(stuffer)) || (char *)stuffer + 32l == ((char *)NULL)",
+        "location": {
+          "file": "tests/cbmc/proofs/s2n_stuffer_wipe/s2n_stuffer_wipe_harness.c",
+          "function": "s2n_stuffer_wipe_harness",
+          "line": 31
+        }
+      },
+      "s2n_stuffer_wipe_harness.assertion.2": {
+        "class": "assertion",
+        "description": "assertion stuffer->high_water_mark == 0",
+        "expression": "!((signed long int)(signed long int)!(stuffer->high_water_mark == (unsigned int)0) != 0l)",
+        "location": {
+          "file": "tests/cbmc/proofs/s2n_stuffer_wipe/s2n_stuffer_wipe_harness.c",
+          "function": "s2n_stuffer_wipe_harness",
+          "line": 31
+        }
+      },
+      "s2n_stuffer_wipe_harness.pointer_dereference.8": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in stuffer->tainted",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(((unsigned int * : 1)NULL)))",
+        "location": {
+          "file": "tests/cbmc/proofs/s2n_stuffer_wipe/s2n_stuffer_wipe_harness.c",
+          "function": "s2n_stuffer_wipe_harness",
+          "line": 32
+        }
+      },
+      "s2n_stuffer_wipe_harness.pointer_dereference.9": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in stuffer->tainted",
+        "expression": "!IS_INVALID_POINTER(stuffer)",
+        "location": {
+          "file": "tests/cbmc/proofs/s2n_stuffer_wipe/s2n_stuffer_wipe_harness.c",
+          "function": "s2n_stuffer_wipe_harness",
+          "line": 32
+        }
+      },
+      "s2n_stuffer_wipe_harness.pointer_dereference.10": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in stuffer->tainted",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "tests/cbmc/proofs/s2n_stuffer_wipe/s2n_stuffer_wipe_harness.c",
+          "function": "s2n_stuffer_wipe_harness",
+          "line": 32
+        }
+      },
+      "s2n_stuffer_wipe_harness.pointer_dereference.11": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in stuffer->tainted",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "tests/cbmc/proofs/s2n_stuffer_wipe/s2n_stuffer_wipe_harness.c",
+          "function": "s2n_stuffer_wipe_harness",
+          "line": 32
+        }
+      },
+      "s2n_stuffer_wipe_harness.pointer_dereference.12": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside dynamic object bounds in stuffer->tainted",
+        "expression": "!IS_DYNAMIC_OBJECT(stuffer) || POINTER_OFFSET(stuffer) + 36l >= 0l && OBJECT_SIZE(stuffer) >= (unsigned long int)POINTER_OFFSET(stuffer) + 37ul",
+        "location": {
+          "file": "tests/cbmc/proofs/s2n_stuffer_wipe/s2n_stuffer_wipe_harness.c",
+          "function": "s2n_stuffer_wipe_harness",
+          "line": 32
+        }
+      },
+      "s2n_stuffer_wipe_harness.pointer_dereference.13": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in stuffer->tainted",
+        "expression": "IS_DYNAMIC_OBJECT(stuffer) || POINTER_OFFSET(stuffer) + 36l >= 0l && OBJECT_SIZE(stuffer) >= (unsigned long int)POINTER_OFFSET(stuffer) + 37ul",
+        "location": {
+          "file": "tests/cbmc/proofs/s2n_stuffer_wipe/s2n_stuffer_wipe_harness.c",
+          "function": "s2n_stuffer_wipe_harness",
+          "line": 32
+        }
+      },
+      "s2n_stuffer_wipe_harness.pointer_dereference.14": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in stuffer->tainted",
+        "expression": "!(POINTER_OBJECT(((unsigned int * : 1)NULL)) == POINTER_OBJECT(stuffer)) || (char *)stuffer + 36l == ((char *)NULL)",
+        "location": {
+          "file": "tests/cbmc/proofs/s2n_stuffer_wipe/s2n_stuffer_wipe_harness.c",
+          "function": "s2n_stuffer_wipe_harness",
+          "line": 32
+        }
+      },
+      "s2n_stuffer_wipe_harness.assertion.3": {
+        "class": "assertion",
+        "description": "assertion stuffer->tainted == 0",
+        "expression": "!((signed long int)(signed long int)!((signed int)stuffer->tainted == 0) != 0l)",
+        "location": {
+          "file": "tests/cbmc/proofs/s2n_stuffer_wipe/s2n_stuffer_wipe_harness.c",
+          "function": "s2n_stuffer_wipe_harness",
+          "line": 32
+        }
+      },
+      "s2n_stuffer_wipe_harness.pointer_dereference.15": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in stuffer->write_cursor",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(((uint32_t *)NULL)))",
+        "location": {
+          "file": "tests/cbmc/proofs/s2n_stuffer_wipe/s2n_stuffer_wipe_harness.c",
+          "function": "s2n_stuffer_wipe_harness",
+          "line": 33
+        }
+      },
+      "s2n_stuffer_wipe_harness.pointer_dereference.16": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in stuffer->write_cursor",
+        "expression": "!IS_INVALID_POINTER(stuffer)",
+        "location": {
+          "file": "tests/cbmc/proofs/s2n_stuffer_wipe/s2n_stuffer_wipe_harness.c",
+          "function": "s2n_stuffer_wipe_harness",
+          "line": 33
+        }
+      },
+      "s2n_stuffer_wipe_harness.pointer_dereference.17": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in stuffer->write_cursor",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "tests/cbmc/proofs/s2n_stuffer_wipe/s2n_stuffer_wipe_harness.c",
+          "function": "s2n_stuffer_wipe_harness",
+          "line": 33
+        }
+      },
+      "s2n_stuffer_wipe_harness.pointer_dereference.18": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in stuffer->write_cursor",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "tests/cbmc/proofs/s2n_stuffer_wipe/s2n_stuffer_wipe_harness.c",
+          "function": "s2n_stuffer_wipe_harness",
+          "line": 33
+        }
+      },
+      "s2n_stuffer_wipe_harness.pointer_dereference.19": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside dynamic object bounds in stuffer->write_cursor",
+        "expression": "!IS_DYNAMIC_OBJECT(stuffer) || POINTER_OFFSET(stuffer) + 28l >= 0l && OBJECT_SIZE(stuffer) >= (unsigned long int)POINTER_OFFSET(stuffer) + 32ul",
+        "location": {
+          "file": "tests/cbmc/proofs/s2n_stuffer_wipe/s2n_stuffer_wipe_harness.c",
+          "function": "s2n_stuffer_wipe_harness",
+          "line": 33
+        }
+      },
+      "s2n_stuffer_wipe_harness.pointer_dereference.20": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in stuffer->write_cursor",
+        "expression": "IS_DYNAMIC_OBJECT(stuffer) || POINTER_OFFSET(stuffer) + 28l >= 0l && OBJECT_SIZE(stuffer) >= (unsigned long int)POINTER_OFFSET(stuffer) + 32ul",
+        "location": {
+          "file": "tests/cbmc/proofs/s2n_stuffer_wipe/s2n_stuffer_wipe_harness.c",
+          "function": "s2n_stuffer_wipe_harness",
+          "line": 33
+        }
+      },
+      "s2n_stuffer_wipe_harness.pointer_dereference.21": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in stuffer->write_cursor",
+        "expression": "!(POINTER_OBJECT(((uint32_t *)NULL)) == POINTER_OBJECT(stuffer)) || (char *)stuffer + 28l == ((char *)NULL)",
+        "location": {
+          "file": "tests/cbmc/proofs/s2n_stuffer_wipe/s2n_stuffer_wipe_harness.c",
+          "function": "s2n_stuffer_wipe_harness",
+          "line": 33
+        }
+      },
+      "s2n_stuffer_wipe_harness.assertion.4": {
+        "class": "assertion",
+        "description": "assertion stuffer->write_cursor == 0",
+        "expression": "!((signed long int)(signed long int)!(stuffer->write_cursor == (unsigned int)0) != 0l)",
+        "location": {
+          "file": "tests/cbmc/proofs/s2n_stuffer_wipe/s2n_stuffer_wipe_harness.c",
+          "function": "s2n_stuffer_wipe_harness",
+          "line": 33
+        }
+      },
+      "s2n_stuffer_wipe_harness.pointer_dereference.22": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in stuffer->read_cursor",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(((uint32_t *)NULL)))",
+        "location": {
+          "file": "tests/cbmc/proofs/s2n_stuffer_wipe/s2n_stuffer_wipe_harness.c",
+          "function": "s2n_stuffer_wipe_harness",
+          "line": 34
+        }
+      },
+      "s2n_stuffer_wipe_harness.pointer_dereference.23": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in stuffer->read_cursor",
+        "expression": "!IS_INVALID_POINTER(stuffer)",
+        "location": {
+          "file": "tests/cbmc/proofs/s2n_stuffer_wipe/s2n_stuffer_wipe_harness.c",
+          "function": "s2n_stuffer_wipe_harness",
+          "line": 34
+        }
+      },
+      "s2n_stuffer_wipe_harness.pointer_dereference.24": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in stuffer->read_cursor",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "tests/cbmc/proofs/s2n_stuffer_wipe/s2n_stuffer_wipe_harness.c",
+          "function": "s2n_stuffer_wipe_harness",
+          "line": 34
+        }
+      },
+      "s2n_stuffer_wipe_harness.pointer_dereference.25": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in stuffer->read_cursor",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "tests/cbmc/proofs/s2n_stuffer_wipe/s2n_stuffer_wipe_harness.c",
+          "function": "s2n_stuffer_wipe_harness",
+          "line": 34
+        }
+      },
+      "s2n_stuffer_wipe_harness.pointer_dereference.26": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside dynamic object bounds in stuffer->read_cursor",
+        "expression": "!IS_DYNAMIC_OBJECT(stuffer) || POINTER_OFFSET(stuffer) + 24l >= 0l && OBJECT_SIZE(stuffer) >= (unsigned long int)POINTER_OFFSET(stuffer) + 28ul",
+        "location": {
+          "file": "tests/cbmc/proofs/s2n_stuffer_wipe/s2n_stuffer_wipe_harness.c",
+          "function": "s2n_stuffer_wipe_harness",
+          "line": 34
+        }
+      },
+      "s2n_stuffer_wipe_harness.pointer_dereference.27": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in stuffer->read_cursor",
+        "expression": "IS_DYNAMIC_OBJECT(stuffer) || POINTER_OFFSET(stuffer) + 24l >= 0l && OBJECT_SIZE(stuffer) >= (unsigned long int)POINTER_OFFSET(stuffer) + 28ul",
+        "location": {
+          "file": "tests/cbmc/proofs/s2n_stuffer_wipe/s2n_stuffer_wipe_harness.c",
+          "function": "s2n_stuffer_wipe_harness",
+          "line": 34
+        }
+      },
+      "s2n_stuffer_wipe_harness.pointer_dereference.28": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in stuffer->read_cursor",
+        "expression": "!(POINTER_OBJECT(((uint32_t *)NULL)) == POINTER_OBJECT(stuffer)) || (char *)stuffer + 24l == ((char *)NULL)",
+        "location": {
+          "file": "tests/cbmc/proofs/s2n_stuffer_wipe/s2n_stuffer_wipe_harness.c",
+          "function": "s2n_stuffer_wipe_harness",
+          "line": 34
+        }
+      },
+      "s2n_stuffer_wipe_harness.assertion.5": {
+        "class": "assertion",
+        "description": "assertion stuffer->read_cursor == 0",
+        "expression": "!((signed long int)(signed long int)!(stuffer->read_cursor == (unsigned int)0) != 0l)",
+        "location": {
+          "file": "tests/cbmc/proofs/s2n_stuffer_wipe/s2n_stuffer_wipe_harness.c",
+          "function": "s2n_stuffer_wipe_harness",
+          "line": 34
+        }
+      },
+      "s2n_stuffer_validate.pointer_dereference.1": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in stuffer->high_water_mark",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(((const uint32_t *)NULL)))",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_validate",
+          "line": 36
+        }
+      },
+      "s2n_stuffer_validate.pointer_dereference.2": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in stuffer->high_water_mark",
+        "expression": "!IS_INVALID_POINTER(stuffer)",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_validate",
+          "line": 36
+        }
+      },
+      "s2n_stuffer_validate.pointer_dereference.3": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in stuffer->high_water_mark",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_validate",
+          "line": 36
+        }
+      },
+      "s2n_stuffer_validate.pointer_dereference.4": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in stuffer->high_water_mark",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_validate",
+          "line": 36
+        }
+      },
+      "s2n_stuffer_validate.pointer_dereference.5": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside dynamic object bounds in stuffer->high_water_mark",
+        "expression": "!IS_DYNAMIC_OBJECT(stuffer) || POINTER_OFFSET(stuffer) + 32l >= 0l && OBJECT_SIZE(stuffer) >= (unsigned long int)POINTER_OFFSET(stuffer) + 36ul",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_validate",
+          "line": 36
+        }
+      },
+      "s2n_stuffer_validate.pointer_dereference.6": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in stuffer->high_water_mark",
+        "expression": "IS_DYNAMIC_OBJECT(stuffer) || POINTER_OFFSET(stuffer) + 32l >= 0l && OBJECT_SIZE(stuffer) >= (unsigned long int)POINTER_OFFSET(stuffer) + 36ul",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_validate",
+          "line": 36
+        }
+      },
+      "s2n_stuffer_validate.pointer_dereference.7": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in stuffer->high_water_mark",
+        "expression": "!(POINTER_OBJECT(((const uint32_t *)NULL)) == POINTER_OBJECT(stuffer)) || (char *)stuffer + 32l == ((char *)NULL)",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_validate",
+          "line": 36
+        }
+      },
+      "s2n_stuffer_validate.pointer_dereference.8": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in stuffer->blob",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(((const struct s2n_blob *)NULL)))",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_validate",
+          "line": 36
+        }
+      },
+      "s2n_stuffer_validate.pointer_dereference.9": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in stuffer->blob",
+        "expression": "!IS_INVALID_POINTER(stuffer)",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_validate",
+          "line": 36
+        }
+      },
+      "s2n_stuffer_validate.pointer_dereference.10": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in stuffer->blob",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_validate",
+          "line": 36
+        }
+      },
+      "s2n_stuffer_validate.pointer_dereference.11": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in stuffer->blob",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_validate",
+          "line": 36
+        }
+      },
+      "s2n_stuffer_validate.pointer_dereference.12": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside dynamic object bounds in stuffer->blob",
+        "expression": "!IS_DYNAMIC_OBJECT(stuffer) || POINTER_OFFSET(stuffer) >= 0l && OBJECT_SIZE(stuffer) >= (unsigned long int)POINTER_OFFSET(stuffer) + 24ul",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_validate",
+          "line": 36
+        }
+      },
+      "s2n_stuffer_validate.pointer_dereference.13": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in stuffer->blob",
+        "expression": "IS_DYNAMIC_OBJECT(stuffer) || POINTER_OFFSET(stuffer) >= 0l && OBJECT_SIZE(stuffer) >= (unsigned long int)POINTER_OFFSET(stuffer) + 24ul",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_validate",
+          "line": 36
+        }
+      },
+      "s2n_stuffer_validate.pointer_dereference.14": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in stuffer->blob",
+        "expression": "!(POINTER_OBJECT(((const struct s2n_blob *)NULL)) == POINTER_OBJECT(stuffer)) || stuffer == ((const struct s2n_stuffer *)NULL)",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_validate",
+          "line": 36
+        }
+      },
+      "s2n_stuffer_validate.pointer_dereference.15": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in stuffer->write_cursor",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(((const uint32_t *)NULL)))",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_validate",
+          "line": 37
+        }
+      },
+      "s2n_stuffer_validate.pointer_dereference.16": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in stuffer->write_cursor",
+        "expression": "!IS_INVALID_POINTER(stuffer)",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_validate",
+          "line": 37
+        }
+      },
+      "s2n_stuffer_validate.pointer_dereference.17": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in stuffer->write_cursor",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_validate",
+          "line": 37
+        }
+      },
+      "s2n_stuffer_validate.pointer_dereference.18": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in stuffer->write_cursor",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_validate",
+          "line": 37
+        }
+      },
+      "s2n_stuffer_validate.pointer_dereference.19": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside dynamic object bounds in stuffer->write_cursor",
+        "expression": "!IS_DYNAMIC_OBJECT(stuffer) || POINTER_OFFSET(stuffer) + 28l >= 0l && OBJECT_SIZE(stuffer) >= (unsigned long int)POINTER_OFFSET(stuffer) + 32ul",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_validate",
+          "line": 37
+        }
+      },
+      "s2n_stuffer_validate.pointer_dereference.20": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in stuffer->write_cursor",
+        "expression": "IS_DYNAMIC_OBJECT(stuffer) || POINTER_OFFSET(stuffer) + 28l >= 0l && OBJECT_SIZE(stuffer) >= (unsigned long int)POINTER_OFFSET(stuffer) + 32ul",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_validate",
+          "line": 37
+        }
+      },
+      "s2n_stuffer_validate.pointer_dereference.21": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in stuffer->write_cursor",
+        "expression": "!(POINTER_OBJECT(((const uint32_t *)NULL)) == POINTER_OBJECT(stuffer)) || (char *)stuffer + 28l == ((char *)NULL)",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_validate",
+          "line": 37
+        }
+      },
+      "s2n_stuffer_validate.pointer_dereference.22": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in stuffer->high_water_mark",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(((const uint32_t *)NULL)))",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_validate",
+          "line": 37
+        }
+      },
+      "s2n_stuffer_validate.pointer_dereference.23": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in stuffer->high_water_mark",
+        "expression": "!IS_INVALID_POINTER(stuffer)",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_validate",
+          "line": 37
+        }
+      },
+      "s2n_stuffer_validate.pointer_dereference.24": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in stuffer->high_water_mark",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_validate",
+          "line": 37
+        }
+      },
+      "s2n_stuffer_validate.pointer_dereference.25": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in stuffer->high_water_mark",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_validate",
+          "line": 37
+        }
+      },
+      "s2n_stuffer_validate.pointer_dereference.26": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside dynamic object bounds in stuffer->high_water_mark",
+        "expression": "!IS_DYNAMIC_OBJECT(stuffer) || POINTER_OFFSET(stuffer) + 32l >= 0l && OBJECT_SIZE(stuffer) >= (unsigned long int)POINTER_OFFSET(stuffer) + 36ul",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_validate",
+          "line": 37
+        }
+      },
+      "s2n_stuffer_validate.pointer_dereference.27": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in stuffer->high_water_mark",
+        "expression": "IS_DYNAMIC_OBJECT(stuffer) || POINTER_OFFSET(stuffer) + 32l >= 0l && OBJECT_SIZE(stuffer) >= (unsigned long int)POINTER_OFFSET(stuffer) + 36ul",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_validate",
+          "line": 37
+        }
+      },
+      "s2n_stuffer_validate.pointer_dereference.28": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in stuffer->high_water_mark",
+        "expression": "!(POINTER_OBJECT(((const uint32_t *)NULL)) == POINTER_OBJECT(stuffer)) || (char *)stuffer + 32l == ((char *)NULL)",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_validate",
+          "line": 37
+        }
+      },
+      "s2n_stuffer_validate.pointer_dereference.29": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in stuffer->read_cursor",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(((const uint32_t *)NULL)))",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_validate",
+          "line": 38
+        }
+      },
+      "s2n_stuffer_validate.pointer_dereference.30": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in stuffer->read_cursor",
+        "expression": "!IS_INVALID_POINTER(stuffer)",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_validate",
+          "line": 38
+        }
+      },
+      "s2n_stuffer_validate.pointer_dereference.31": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in stuffer->read_cursor",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_validate",
+          "line": 38
+        }
+      },
+      "s2n_stuffer_validate.pointer_dereference.32": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in stuffer->read_cursor",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_validate",
+          "line": 38
+        }
+      },
+      "s2n_stuffer_validate.pointer_dereference.33": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside dynamic object bounds in stuffer->read_cursor",
+        "expression": "!IS_DYNAMIC_OBJECT(stuffer) || POINTER_OFFSET(stuffer) + 24l >= 0l && OBJECT_SIZE(stuffer) >= (unsigned long int)POINTER_OFFSET(stuffer) + 28ul",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_validate",
+          "line": 38
+        }
+      },
+      "s2n_stuffer_validate.pointer_dereference.34": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in stuffer->read_cursor",
+        "expression": "IS_DYNAMIC_OBJECT(stuffer) || POINTER_OFFSET(stuffer) + 24l >= 0l && OBJECT_SIZE(stuffer) >= (unsigned long int)POINTER_OFFSET(stuffer) + 28ul",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_validate",
+          "line": 38
+        }
+      },
+      "s2n_stuffer_validate.pointer_dereference.35": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in stuffer->read_cursor",
+        "expression": "!(POINTER_OBJECT(((const uint32_t *)NULL)) == POINTER_OBJECT(stuffer)) || (char *)stuffer + 24l == ((char *)NULL)",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_validate",
+          "line": 38
+        }
+      },
+      "s2n_stuffer_validate.pointer_dereference.36": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in stuffer->write_cursor",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(((const uint32_t *)NULL)))",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_validate",
+          "line": 38
+        }
+      },
+      "s2n_stuffer_validate.pointer_dereference.37": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in stuffer->write_cursor",
+        "expression": "!IS_INVALID_POINTER(stuffer)",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_validate",
+          "line": 38
+        }
+      },
+      "s2n_stuffer_validate.pointer_dereference.38": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in stuffer->write_cursor",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_validate",
+          "line": 38
+        }
+      },
+      "s2n_stuffer_validate.pointer_dereference.39": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in stuffer->write_cursor",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_validate",
+          "line": 38
+        }
+      },
+      "s2n_stuffer_validate.pointer_dereference.40": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside dynamic object bounds in stuffer->write_cursor",
+        "expression": "!IS_DYNAMIC_OBJECT(stuffer) || POINTER_OFFSET(stuffer) + 28l >= 0l && OBJECT_SIZE(stuffer) >= (unsigned long int)POINTER_OFFSET(stuffer) + 32ul",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_validate",
+          "line": 38
+        }
+      },
+      "s2n_stuffer_validate.pointer_dereference.41": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in stuffer->write_cursor",
+        "expression": "IS_DYNAMIC_OBJECT(stuffer) || POINTER_OFFSET(stuffer) + 28l >= 0l && OBJECT_SIZE(stuffer) >= (unsigned long int)POINTER_OFFSET(stuffer) + 32ul",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_validate",
+          "line": 38
+        }
+      },
+      "s2n_stuffer_validate.pointer_dereference.42": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in stuffer->write_cursor",
+        "expression": "!(POINTER_OBJECT(((const uint32_t *)NULL)) == POINTER_OBJECT(stuffer)) || (char *)stuffer + 28l == ((char *)NULL)",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_validate",
+          "line": 38
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.1": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in blob->growable",
+        "expression": "!(POINTER_OBJECT(blob) == POINTER_OBJECT(((unsigned int * : 1)NULL)))",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 27
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.2": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in blob->growable",
+        "expression": "!IS_INVALID_POINTER(blob)",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 27
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.3": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in blob->growable",
+        "expression": "!(POINTER_OBJECT(blob) == POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 27
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.4": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in blob->growable",
+        "expression": "!(POINTER_OBJECT(blob) == POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 27
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.5": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside dynamic object bounds in blob->growable",
+        "expression": "!IS_DYNAMIC_OBJECT(blob) || POINTER_OFFSET(blob) + 16l >= 0l && OBJECT_SIZE(blob) >= (unsigned long int)POINTER_OFFSET(blob) + 17ul",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 27
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.6": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in blob->growable",
+        "expression": "IS_DYNAMIC_OBJECT(blob) || POINTER_OFFSET(blob) + 16l >= 0l && OBJECT_SIZE(blob) >= (unsigned long int)POINTER_OFFSET(blob) + 17ul",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 27
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.7": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in blob->growable",
+        "expression": "!(POINTER_OBJECT(((unsigned int * : 1)NULL)) == POINTER_OBJECT(blob)) || (char *)blob + 16l == ((char *)NULL)",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 27
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.8": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in blob->allocated",
+        "expression": "!(POINTER_OBJECT(blob) == POINTER_OBJECT(((uint32_t *)NULL)))",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 28
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.9": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in blob->allocated",
+        "expression": "!IS_INVALID_POINTER(blob)",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 28
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.10": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in blob->allocated",
+        "expression": "!(POINTER_OBJECT(blob) == POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 28
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.11": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in blob->allocated",
+        "expression": "!(POINTER_OBJECT(blob) == POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 28
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.12": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside dynamic object bounds in blob->allocated",
+        "expression": "!IS_DYNAMIC_OBJECT(blob) || POINTER_OFFSET(blob) + 12l >= 0l && OBJECT_SIZE(blob) >= (unsigned long int)POINTER_OFFSET(blob) + 16ul",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 28
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.13": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in blob->allocated",
+        "expression": "IS_DYNAMIC_OBJECT(blob) || POINTER_OFFSET(blob) + 12l >= 0l && OBJECT_SIZE(blob) >= (unsigned long int)POINTER_OFFSET(blob) + 16ul",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 28
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.14": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in blob->allocated",
+        "expression": "!(POINTER_OBJECT(((uint32_t *)NULL)) == POINTER_OBJECT(blob)) || (char *)blob + 12l == ((char *)NULL)",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 28
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.15": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in blob->allocated",
+        "expression": "!(POINTER_OBJECT(blob) == POINTER_OBJECT(((uint32_t *)NULL)))",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 28
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.16": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in blob->allocated",
+        "expression": "!IS_INVALID_POINTER(blob)",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 28
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.17": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in blob->allocated",
+        "expression": "!(POINTER_OBJECT(blob) == POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 28
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.18": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in blob->allocated",
+        "expression": "!(POINTER_OBJECT(blob) == POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 28
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.19": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside dynamic object bounds in blob->allocated",
+        "expression": "!IS_DYNAMIC_OBJECT(blob) || POINTER_OFFSET(blob) + 12l >= 0l && OBJECT_SIZE(blob) >= (unsigned long int)POINTER_OFFSET(blob) + 16ul",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 28
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.20": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in blob->allocated",
+        "expression": "IS_DYNAMIC_OBJECT(blob) || POINTER_OFFSET(blob) + 12l >= 0l && OBJECT_SIZE(blob) >= (unsigned long int)POINTER_OFFSET(blob) + 16ul",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 28
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.21": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in blob->allocated",
+        "expression": "!(POINTER_OBJECT(((uint32_t *)NULL)) == POINTER_OBJECT(blob)) || (char *)blob + 12l == ((char *)NULL)",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 28
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.22": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in blob->data",
+        "expression": "!(POINTER_OBJECT(blob) == POINTER_OBJECT(((uint8_t **)NULL)))",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 28
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.23": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in blob->data",
+        "expression": "!IS_INVALID_POINTER(blob)",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 28
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.24": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in blob->data",
+        "expression": "!(POINTER_OBJECT(blob) == POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 28
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.25": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in blob->data",
+        "expression": "!(POINTER_OBJECT(blob) == POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 28
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.26": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside dynamic object bounds in blob->data",
+        "expression": "!IS_DYNAMIC_OBJECT(blob) || POINTER_OFFSET(blob) >= 0l && OBJECT_SIZE(blob) >= (unsigned long int)POINTER_OFFSET(blob) + 8ul",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 28
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.27": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in blob->data",
+        "expression": "IS_DYNAMIC_OBJECT(blob) || POINTER_OFFSET(blob) >= 0l && OBJECT_SIZE(blob) >= (unsigned long int)POINTER_OFFSET(blob) + 8ul",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 28
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.28": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in blob->data",
+        "expression": "!(POINTER_OBJECT(((uint8_t **)NULL)) == POINTER_OBJECT(blob)) || blob == ((struct s2n_blob *)NULL)",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 28
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.29": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in blob->size",
+        "expression": "!(POINTER_OBJECT(blob) == POINTER_OBJECT(((uint32_t *)NULL)))",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 30
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.30": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in blob->size",
+        "expression": "!IS_INVALID_POINTER(blob)",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 30
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.31": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in blob->size",
+        "expression": "!(POINTER_OBJECT(blob) == POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 30
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.32": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in blob->size",
+        "expression": "!(POINTER_OBJECT(blob) == POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 30
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.33": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside dynamic object bounds in blob->size",
+        "expression": "!IS_DYNAMIC_OBJECT(blob) || POINTER_OFFSET(blob) + 8l >= 0l && OBJECT_SIZE(blob) >= (unsigned long int)POINTER_OFFSET(blob) + 12ul",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 30
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.34": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in blob->size",
+        "expression": "IS_DYNAMIC_OBJECT(blob) || POINTER_OFFSET(blob) + 8l >= 0l && OBJECT_SIZE(blob) >= (unsigned long int)POINTER_OFFSET(blob) + 12ul",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 30
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.35": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in blob->size",
+        "expression": "!(POINTER_OBJECT(((uint32_t *)NULL)) == POINTER_OBJECT(blob)) || (char *)blob + 8l == ((char *)NULL)",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 30
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.36": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in blob->size",
+        "expression": "!(POINTER_OBJECT(blob) == POINTER_OBJECT(((uint32_t *)NULL)))",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 30
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.37": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in blob->size",
+        "expression": "!IS_INVALID_POINTER(blob)",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 30
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.38": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in blob->size",
+        "expression": "!(POINTER_OBJECT(blob) == POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 30
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.39": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in blob->size",
+        "expression": "!(POINTER_OBJECT(blob) == POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 30
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.40": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside dynamic object bounds in blob->size",
+        "expression": "!IS_DYNAMIC_OBJECT(blob) || POINTER_OFFSET(blob) + 8l >= 0l && OBJECT_SIZE(blob) >= (unsigned long int)POINTER_OFFSET(blob) + 12ul",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 30
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.41": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in blob->size",
+        "expression": "IS_DYNAMIC_OBJECT(blob) || POINTER_OFFSET(blob) + 8l >= 0l && OBJECT_SIZE(blob) >= (unsigned long int)POINTER_OFFSET(blob) + 12ul",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 30
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.42": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in blob->size",
+        "expression": "!(POINTER_OBJECT(((uint32_t *)NULL)) == POINTER_OBJECT(blob)) || (char *)blob + 8l == ((char *)NULL)",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 30
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.43": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in blob->data",
+        "expression": "!(POINTER_OBJECT(blob) == POINTER_OBJECT(((uint8_t **)NULL)))",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 30
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.44": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in blob->data",
+        "expression": "!IS_INVALID_POINTER(blob)",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 30
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.45": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in blob->data",
+        "expression": "!(POINTER_OBJECT(blob) == POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 30
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.46": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in blob->data",
+        "expression": "!(POINTER_OBJECT(blob) == POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 30
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.47": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside dynamic object bounds in blob->data",
+        "expression": "!IS_DYNAMIC_OBJECT(blob) || POINTER_OFFSET(blob) >= 0l && OBJECT_SIZE(blob) >= (unsigned long int)POINTER_OFFSET(blob) + 8ul",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 30
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.48": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in blob->data",
+        "expression": "IS_DYNAMIC_OBJECT(blob) || POINTER_OFFSET(blob) >= 0l && OBJECT_SIZE(blob) >= (unsigned long int)POINTER_OFFSET(blob) + 8ul",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 30
+        }
+      },
+      "ensure_s2n_blob_has_allocated_fields.pointer_dereference.49": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in blob->data",
+        "expression": "!(POINTER_OBJECT(((uint8_t **)NULL)) == POINTER_OBJECT(blob)) || blob == ((struct s2n_blob *)NULL)",
+        "location": {
+          "file": "tests/cbmc/sources/make_common_datastructures.c",
+          "function": "ensure_s2n_blob_has_allocated_fields",
+          "line": 30
+        }
+      },
+      "malloc.assertion.1": {
+        "class": "assertion",
+        "description": "max allocation size exceeded",
+        "expression": "malloc_size <= __CPROVER_max_malloc_size",
+        "location": {
+          "file": "<builtin-library-malloc>",
+          "function": "malloc",
+          "line": 26
+        }
+      },
+      "malloc.assertion.2": {
+        "class": "assertion",
+        "description": "max allocation may fail",
+        "expression": "!__CPROVER_malloc_may_fail || !should_malloc_fail",
+        "location": {
+          "file": "<builtin-library-malloc>",
+          "function": "malloc",
+          "line": 31
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.1": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in stuffer->high_water_mark",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(((uint32_t *)NULL)))",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 253
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.2": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in stuffer->high_water_mark",
+        "expression": "!IS_INVALID_POINTER(stuffer)",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 253
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.3": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in stuffer->high_water_mark",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 253
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.4": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in stuffer->high_water_mark",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 253
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.5": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside dynamic object bounds in stuffer->high_water_mark",
+        "expression": "!IS_DYNAMIC_OBJECT(stuffer) || POINTER_OFFSET(stuffer) + 32l >= 0l && OBJECT_SIZE(stuffer) >= (unsigned long int)POINTER_OFFSET(stuffer) + 36ul",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 253
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.6": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in stuffer->high_water_mark",
+        "expression": "IS_DYNAMIC_OBJECT(stuffer) || POINTER_OFFSET(stuffer) + 32l >= 0l && OBJECT_SIZE(stuffer) >= (unsigned long int)POINTER_OFFSET(stuffer) + 36ul",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 253
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.7": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in stuffer->high_water_mark",
+        "expression": "!(POINTER_OBJECT(((uint32_t *)NULL)) == POINTER_OBJECT(stuffer)) || (char *)stuffer + 32l == ((char *)NULL)",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 253
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.8": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in stuffer->high_water_mark",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(((uint32_t *)NULL)))",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 254
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.9": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in stuffer->high_water_mark",
+        "expression": "!IS_INVALID_POINTER(stuffer)",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 254
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.10": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in stuffer->high_water_mark",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 254
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.11": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in stuffer->high_water_mark",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 254
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.12": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside dynamic object bounds in stuffer->high_water_mark",
+        "expression": "!IS_DYNAMIC_OBJECT(stuffer) || POINTER_OFFSET(stuffer) + 32l >= 0l && OBJECT_SIZE(stuffer) >= (unsigned long int)POINTER_OFFSET(stuffer) + 36ul",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 254
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.13": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in stuffer->high_water_mark",
+        "expression": "IS_DYNAMIC_OBJECT(stuffer) || POINTER_OFFSET(stuffer) + 32l >= 0l && OBJECT_SIZE(stuffer) >= (unsigned long int)POINTER_OFFSET(stuffer) + 36ul",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 254
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.14": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in stuffer->high_water_mark",
+        "expression": "!(POINTER_OBJECT(((uint32_t *)NULL)) == POINTER_OBJECT(stuffer)) || (char *)stuffer + 32l == ((char *)NULL)",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 254
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.15": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in stuffer->blob",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(((struct s2n_blob *)NULL)))",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 254
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.16": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in stuffer->blob",
+        "expression": "!IS_INVALID_POINTER(stuffer)",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 254
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.17": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in stuffer->blob",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 254
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.18": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in stuffer->blob",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 254
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.19": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside dynamic object bounds in stuffer->blob",
+        "expression": "!IS_DYNAMIC_OBJECT(stuffer) || POINTER_OFFSET(stuffer) >= 0l && OBJECT_SIZE(stuffer) >= (unsigned long int)POINTER_OFFSET(stuffer) + 24ul",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 254
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.20": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in stuffer->blob",
+        "expression": "IS_DYNAMIC_OBJECT(stuffer) || POINTER_OFFSET(stuffer) >= 0l && OBJECT_SIZE(stuffer) >= (unsigned long int)POINTER_OFFSET(stuffer) + 24ul",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 254
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.21": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in stuffer->blob",
+        "expression": "!(POINTER_OBJECT(((struct s2n_blob *)NULL)) == POINTER_OBJECT(stuffer)) || stuffer == ((struct s2n_stuffer *)NULL)",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 254
+        }
+      },
+      "s2n_stuffer_wipe.precondition_instance.1": {
+        "class": "precondition_instance",
+        "description": "memset destination region writeable",
+        "expression": "(FALSE || !(POINTER_OBJECT((void *)__tmp_d) == POINTER_OBJECT(NULL))) && !IS_INVALID_POINTER((void *)__tmp_d) && (FALSE || !(POINTER_OBJECT((void *)__tmp_d) == POINTER_OBJECT(__CPROVER_deallocated))) && (FALSE || !(POINTER_OBJECT((void *)__tmp_d) == POINTER_OBJECT(__CPROVER_dead_object))) && (FALSE || (IS_DYNAMIC_OBJECT((void *)__tmp_d) ==> !(POINTER_OFFSET((void *)__tmp_d) < 0l || (__CPROVER_size_t)POINTER_OFFSET((void *)__tmp_d) + (__CPROVER_size_t)__tmp_n > OBJECT_SIZE((void *)__tmp_d)))) && (FALSE || (!IS_DYNAMIC_OBJECT((void *)__tmp_d) ==> !(POINTER_OFFSET((void *)__tmp_d) < 0l || (__CPROVER_size_t)POINTER_OFFSET((void *)__tmp_d) + (__CPROVER_size_t)__tmp_n > OBJECT_SIZE((void *)__tmp_d)))) && (POINTER_OBJECT(NULL) == POINTER_OBJECT((void *)__tmp_d) && NULL != (void *)__tmp_d ==> FALSE)",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 254
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.22": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in stuffer->tainted",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(((unsigned int * : 1)NULL)))",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 257
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.23": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in stuffer->tainted",
+        "expression": "!IS_INVALID_POINTER(stuffer)",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 257
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.24": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in stuffer->tainted",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 257
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.25": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in stuffer->tainted",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 257
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.26": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside dynamic object bounds in stuffer->tainted",
+        "expression": "!IS_DYNAMIC_OBJECT(stuffer) || POINTER_OFFSET(stuffer) + 36l >= 0l && OBJECT_SIZE(stuffer) >= (unsigned long int)POINTER_OFFSET(stuffer) + 37ul",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 257
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.27": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in stuffer->tainted",
+        "expression": "IS_DYNAMIC_OBJECT(stuffer) || POINTER_OFFSET(stuffer) + 36l >= 0l && OBJECT_SIZE(stuffer) >= (unsigned long int)POINTER_OFFSET(stuffer) + 37ul",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 257
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.28": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in stuffer->tainted",
+        "expression": "!(POINTER_OBJECT(((unsigned int * : 1)NULL)) == POINTER_OBJECT(stuffer)) || (char *)stuffer + 36l == ((char *)NULL)",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 257
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.29": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in stuffer->write_cursor",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(((uint32_t *)NULL)))",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 258
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.30": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in stuffer->write_cursor",
+        "expression": "!IS_INVALID_POINTER(stuffer)",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 258
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.31": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in stuffer->write_cursor",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 258
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.32": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in stuffer->write_cursor",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 258
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.33": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside dynamic object bounds in stuffer->write_cursor",
+        "expression": "!IS_DYNAMIC_OBJECT(stuffer) || POINTER_OFFSET(stuffer) + 28l >= 0l && OBJECT_SIZE(stuffer) >= (unsigned long int)POINTER_OFFSET(stuffer) + 32ul",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 258
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.34": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in stuffer->write_cursor",
+        "expression": "IS_DYNAMIC_OBJECT(stuffer) || POINTER_OFFSET(stuffer) + 28l >= 0l && OBJECT_SIZE(stuffer) >= (unsigned long int)POINTER_OFFSET(stuffer) + 32ul",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 258
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.35": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in stuffer->write_cursor",
+        "expression": "!(POINTER_OBJECT(((uint32_t *)NULL)) == POINTER_OBJECT(stuffer)) || (char *)stuffer + 28l == ((char *)NULL)",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 258
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.36": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in stuffer->read_cursor",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(((uint32_t *)NULL)))",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 259
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.37": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in stuffer->read_cursor",
+        "expression": "!IS_INVALID_POINTER(stuffer)",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 259
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.38": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in stuffer->read_cursor",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 259
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.39": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in stuffer->read_cursor",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 259
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.40": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside dynamic object bounds in stuffer->read_cursor",
+        "expression": "!IS_DYNAMIC_OBJECT(stuffer) || POINTER_OFFSET(stuffer) + 24l >= 0l && OBJECT_SIZE(stuffer) >= (unsigned long int)POINTER_OFFSET(stuffer) + 28ul",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 259
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.41": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in stuffer->read_cursor",
+        "expression": "IS_DYNAMIC_OBJECT(stuffer) || POINTER_OFFSET(stuffer) + 24l >= 0l && OBJECT_SIZE(stuffer) >= (unsigned long int)POINTER_OFFSET(stuffer) + 28ul",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 259
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.42": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in stuffer->read_cursor",
+        "expression": "!(POINTER_OBJECT(((uint32_t *)NULL)) == POINTER_OBJECT(stuffer)) || (char *)stuffer + 24l == ((char *)NULL)",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 259
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.43": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in stuffer->high_water_mark",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(((uint32_t *)NULL)))",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 260
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.44": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in stuffer->high_water_mark",
+        "expression": "!IS_INVALID_POINTER(stuffer)",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 260
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.45": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in stuffer->high_water_mark",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 260
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.46": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in stuffer->high_water_mark",
+        "expression": "!(POINTER_OBJECT(stuffer) == POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 260
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.47": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside dynamic object bounds in stuffer->high_water_mark",
+        "expression": "!IS_DYNAMIC_OBJECT(stuffer) || POINTER_OFFSET(stuffer) + 32l >= 0l && OBJECT_SIZE(stuffer) >= (unsigned long int)POINTER_OFFSET(stuffer) + 36ul",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 260
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.48": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in stuffer->high_water_mark",
+        "expression": "IS_DYNAMIC_OBJECT(stuffer) || POINTER_OFFSET(stuffer) + 32l >= 0l && OBJECT_SIZE(stuffer) >= (unsigned long int)POINTER_OFFSET(stuffer) + 36ul",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 260
+        }
+      },
+      "s2n_stuffer_wipe.pointer_dereference.49": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in stuffer->high_water_mark",
+        "expression": "!(POINTER_OBJECT(((uint32_t *)NULL)) == POINTER_OBJECT(stuffer)) || (char *)stuffer + 32l == ((char *)NULL)",
+        "location": {
+          "file": "stuffer/s2n_stuffer.c",
+          "function": "s2n_stuffer_wipe",
+          "line": 260
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.1": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in b->data",
+        "expression": "!(POINTER_OBJECT(b) == POINTER_OBJECT(((uint8_t * const *)NULL)))",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 30
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.2": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in b->data",
+        "expression": "!IS_INVALID_POINTER(b)",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 30
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.3": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in b->data",
+        "expression": "!(POINTER_OBJECT(b) == POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 30
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.4": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in b->data",
+        "expression": "!(POINTER_OBJECT(b) == POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 30
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.5": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside dynamic object bounds in b->data",
+        "expression": "!IS_DYNAMIC_OBJECT(b) || POINTER_OFFSET(b) >= 0l && OBJECT_SIZE(b) >= (unsigned long int)POINTER_OFFSET(b) + 8ul",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 30
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.6": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in b->data",
+        "expression": "IS_DYNAMIC_OBJECT(b) || POINTER_OFFSET(b) >= 0l && OBJECT_SIZE(b) >= (unsigned long int)POINTER_OFFSET(b) + 8ul",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 30
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.7": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in b->data",
+        "expression": "!(POINTER_OBJECT(((uint8_t * const *)NULL)) == POINTER_OBJECT(b)) || b == ((const struct s2n_blob *)NULL)",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 30
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.8": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in b->size",
+        "expression": "!(POINTER_OBJECT(b) == POINTER_OBJECT(((const uint32_t *)NULL)))",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 30
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.9": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in b->size",
+        "expression": "!IS_INVALID_POINTER(b)",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 30
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.10": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in b->size",
+        "expression": "!(POINTER_OBJECT(b) == POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 30
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.11": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in b->size",
+        "expression": "!(POINTER_OBJECT(b) == POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 30
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.12": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside dynamic object bounds in b->size",
+        "expression": "!IS_DYNAMIC_OBJECT(b) || POINTER_OFFSET(b) + 8l >= 0l && OBJECT_SIZE(b) >= (unsigned long int)POINTER_OFFSET(b) + 12ul",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 30
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.13": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in b->size",
+        "expression": "IS_DYNAMIC_OBJECT(b) || POINTER_OFFSET(b) + 8l >= 0l && OBJECT_SIZE(b) >= (unsigned long int)POINTER_OFFSET(b) + 12ul",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 30
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.14": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in b->size",
+        "expression": "!(POINTER_OBJECT(((const uint32_t *)NULL)) == POINTER_OBJECT(b)) || (char *)b + 8l == ((char *)NULL)",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 30
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.15": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in b->data",
+        "expression": "!(POINTER_OBJECT(b) == POINTER_OBJECT(((uint8_t * const *)NULL)))",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 31
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.16": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in b->data",
+        "expression": "!IS_INVALID_POINTER(b)",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 31
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.17": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in b->data",
+        "expression": "!(POINTER_OBJECT(b) == POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 31
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.18": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in b->data",
+        "expression": "!(POINTER_OBJECT(b) == POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 31
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.19": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside dynamic object bounds in b->data",
+        "expression": "!IS_DYNAMIC_OBJECT(b) || POINTER_OFFSET(b) >= 0l && OBJECT_SIZE(b) >= (unsigned long int)POINTER_OFFSET(b) + 8ul",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 31
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.20": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in b->data",
+        "expression": "IS_DYNAMIC_OBJECT(b) || POINTER_OFFSET(b) >= 0l && OBJECT_SIZE(b) >= (unsigned long int)POINTER_OFFSET(b) + 8ul",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 31
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.21": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in b->data",
+        "expression": "!(POINTER_OBJECT(((uint8_t * const *)NULL)) == POINTER_OBJECT(b)) || b == ((const struct s2n_blob *)NULL)",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 31
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.22": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in b->allocated",
+        "expression": "!(POINTER_OBJECT(b) == POINTER_OBJECT(((const uint32_t *)NULL)))",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 31
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.23": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in b->allocated",
+        "expression": "!IS_INVALID_POINTER(b)",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 31
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.24": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in b->allocated",
+        "expression": "!(POINTER_OBJECT(b) == POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 31
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.25": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in b->allocated",
+        "expression": "!(POINTER_OBJECT(b) == POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 31
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.26": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside dynamic object bounds in b->allocated",
+        "expression": "!IS_DYNAMIC_OBJECT(b) || POINTER_OFFSET(b) + 12l >= 0l && OBJECT_SIZE(b) >= (unsigned long int)POINTER_OFFSET(b) + 16ul",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 31
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.27": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in b->allocated",
+        "expression": "IS_DYNAMIC_OBJECT(b) || POINTER_OFFSET(b) + 12l >= 0l && OBJECT_SIZE(b) >= (unsigned long int)POINTER_OFFSET(b) + 16ul",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 31
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.28": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in b->allocated",
+        "expression": "!(POINTER_OBJECT(((const uint32_t *)NULL)) == POINTER_OBJECT(b)) || (char *)b + 12l == ((char *)NULL)",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 31
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.29": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in b->growable",
+        "expression": "!(POINTER_OBJECT(b) == POINTER_OBJECT(((const unsigned int * : 1)NULL)))",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 32
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.30": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in b->growable",
+        "expression": "!IS_INVALID_POINTER(b)",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 32
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.31": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in b->growable",
+        "expression": "!(POINTER_OBJECT(b) == POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 32
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.32": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in b->growable",
+        "expression": "!(POINTER_OBJECT(b) == POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 32
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.33": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside dynamic object bounds in b->growable",
+        "expression": "!IS_DYNAMIC_OBJECT(b) || POINTER_OFFSET(b) + 16l >= 0l && OBJECT_SIZE(b) >= (unsigned long int)POINTER_OFFSET(b) + 17ul",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 32
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.34": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in b->growable",
+        "expression": "IS_DYNAMIC_OBJECT(b) || POINTER_OFFSET(b) + 16l >= 0l && OBJECT_SIZE(b) >= (unsigned long int)POINTER_OFFSET(b) + 17ul",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 32
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.35": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in b->growable",
+        "expression": "!(POINTER_OBJECT(((const unsigned int * : 1)NULL)) == POINTER_OBJECT(b)) || (char *)b + 16l == ((char *)NULL)",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 32
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.36": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in b->allocated",
+        "expression": "!(POINTER_OBJECT(b) == POINTER_OBJECT(((const uint32_t *)NULL)))",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 32
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.37": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in b->allocated",
+        "expression": "!IS_INVALID_POINTER(b)",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 32
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.38": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in b->allocated",
+        "expression": "!(POINTER_OBJECT(b) == POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 32
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.39": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in b->allocated",
+        "expression": "!(POINTER_OBJECT(b) == POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 32
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.40": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside dynamic object bounds in b->allocated",
+        "expression": "!IS_DYNAMIC_OBJECT(b) || POINTER_OFFSET(b) + 12l >= 0l && OBJECT_SIZE(b) >= (unsigned long int)POINTER_OFFSET(b) + 16ul",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 32
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.41": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in b->allocated",
+        "expression": "IS_DYNAMIC_OBJECT(b) || POINTER_OFFSET(b) + 12l >= 0l && OBJECT_SIZE(b) >= (unsigned long int)POINTER_OFFSET(b) + 16ul",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 32
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.42": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in b->allocated",
+        "expression": "!(POINTER_OBJECT(((const uint32_t *)NULL)) == POINTER_OBJECT(b)) || (char *)b + 12l == ((char *)NULL)",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 32
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.43": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in b->growable",
+        "expression": "!(POINTER_OBJECT(b) == POINTER_OBJECT(((const unsigned int * : 1)NULL)))",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 33
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.44": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in b->growable",
+        "expression": "!IS_INVALID_POINTER(b)",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 33
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.45": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in b->growable",
+        "expression": "!(POINTER_OBJECT(b) == POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 33
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.46": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in b->growable",
+        "expression": "!(POINTER_OBJECT(b) == POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 33
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.47": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside dynamic object bounds in b->growable",
+        "expression": "!IS_DYNAMIC_OBJECT(b) || POINTER_OFFSET(b) + 16l >= 0l && OBJECT_SIZE(b) >= (unsigned long int)POINTER_OFFSET(b) + 17ul",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 33
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.48": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in b->growable",
+        "expression": "IS_DYNAMIC_OBJECT(b) || POINTER_OFFSET(b) + 16l >= 0l && OBJECT_SIZE(b) >= (unsigned long int)POINTER_OFFSET(b) + 17ul",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 33
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.49": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in b->growable",
+        "expression": "!(POINTER_OBJECT(((const unsigned int * : 1)NULL)) == POINTER_OBJECT(b)) || (char *)b + 16l == ((char *)NULL)",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 33
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.50": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in b->size",
+        "expression": "!(POINTER_OBJECT(b) == POINTER_OBJECT(((const uint32_t *)NULL)))",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 33
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.51": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in b->size",
+        "expression": "!IS_INVALID_POINTER(b)",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 33
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.52": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in b->size",
+        "expression": "!(POINTER_OBJECT(b) == POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 33
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.53": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in b->size",
+        "expression": "!(POINTER_OBJECT(b) == POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 33
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.54": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside dynamic object bounds in b->size",
+        "expression": "!IS_DYNAMIC_OBJECT(b) || POINTER_OFFSET(b) + 8l >= 0l && OBJECT_SIZE(b) >= (unsigned long int)POINTER_OFFSET(b) + 12ul",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 33
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.55": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in b->size",
+        "expression": "IS_DYNAMIC_OBJECT(b) || POINTER_OFFSET(b) + 8l >= 0l && OBJECT_SIZE(b) >= (unsigned long int)POINTER_OFFSET(b) + 12ul",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 33
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.56": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in b->size",
+        "expression": "!(POINTER_OBJECT(((const uint32_t *)NULL)) == POINTER_OBJECT(b)) || (char *)b + 8l == ((char *)NULL)",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 33
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.57": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in b->allocated",
+        "expression": "!(POINTER_OBJECT(b) == POINTER_OBJECT(((const uint32_t *)NULL)))",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 33
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.58": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in b->allocated",
+        "expression": "!IS_INVALID_POINTER(b)",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 33
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.59": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in b->allocated",
+        "expression": "!(POINTER_OBJECT(b) == POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 33
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.60": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in b->allocated",
+        "expression": "!(POINTER_OBJECT(b) == POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 33
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.61": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside dynamic object bounds in b->allocated",
+        "expression": "!IS_DYNAMIC_OBJECT(b) || POINTER_OFFSET(b) + 12l >= 0l && OBJECT_SIZE(b) >= (unsigned long int)POINTER_OFFSET(b) + 16ul",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 33
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.62": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in b->allocated",
+        "expression": "IS_DYNAMIC_OBJECT(b) || POINTER_OFFSET(b) + 12l >= 0l && OBJECT_SIZE(b) >= (unsigned long int)POINTER_OFFSET(b) + 16ul",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 33
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.63": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in b->allocated",
+        "expression": "!(POINTER_OBJECT(((const uint32_t *)NULL)) == POINTER_OBJECT(b)) || (char *)b + 12l == ((char *)NULL)",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 33
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.64": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in b->allocated",
+        "expression": "!(POINTER_OBJECT(b) == POINTER_OBJECT(((const uint32_t *)NULL)))",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 34
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.65": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in b->allocated",
+        "expression": "!IS_INVALID_POINTER(b)",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 34
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.66": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in b->allocated",
+        "expression": "!(POINTER_OBJECT(b) == POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 34
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.67": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in b->allocated",
+        "expression": "!(POINTER_OBJECT(b) == POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 34
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.68": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside dynamic object bounds in b->allocated",
+        "expression": "!IS_DYNAMIC_OBJECT(b) || POINTER_OFFSET(b) + 12l >= 0l && OBJECT_SIZE(b) >= (unsigned long int)POINTER_OFFSET(b) + 16ul",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 34
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.69": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in b->allocated",
+        "expression": "IS_DYNAMIC_OBJECT(b) || POINTER_OFFSET(b) + 12l >= 0l && OBJECT_SIZE(b) >= (unsigned long int)POINTER_OFFSET(b) + 16ul",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 34
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.70": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in b->allocated",
+        "expression": "!(POINTER_OBJECT(((const uint32_t *)NULL)) == POINTER_OBJECT(b)) || (char *)b + 12l == ((char *)NULL)",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 34
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.71": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in b->data",
+        "expression": "!(POINTER_OBJECT(b) == POINTER_OBJECT(((uint8_t * const *)NULL)))",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 34
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.72": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in b->data",
+        "expression": "!IS_INVALID_POINTER(b)",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 34
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.73": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in b->data",
+        "expression": "!(POINTER_OBJECT(b) == POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 34
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.74": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in b->data",
+        "expression": "!(POINTER_OBJECT(b) == POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 34
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.75": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside dynamic object bounds in b->data",
+        "expression": "!IS_DYNAMIC_OBJECT(b) || POINTER_OFFSET(b) >= 0l && OBJECT_SIZE(b) >= (unsigned long int)POINTER_OFFSET(b) + 8ul",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 34
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.76": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in b->data",
+        "expression": "IS_DYNAMIC_OBJECT(b) || POINTER_OFFSET(b) >= 0l && OBJECT_SIZE(b) >= (unsigned long int)POINTER_OFFSET(b) + 8ul",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 34
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.77": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in b->data",
+        "expression": "!(POINTER_OBJECT(((uint8_t * const *)NULL)) == POINTER_OBJECT(b)) || b == ((const struct s2n_blob *)NULL)",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 34
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.78": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in b->size",
+        "expression": "!(POINTER_OBJECT(b) == POINTER_OBJECT(((const uint32_t *)NULL)))",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 35
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.79": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in b->size",
+        "expression": "!IS_INVALID_POINTER(b)",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 35
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.80": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in b->size",
+        "expression": "!(POINTER_OBJECT(b) == POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 35
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.81": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in b->size",
+        "expression": "!(POINTER_OBJECT(b) == POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 35
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.82": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside dynamic object bounds in b->size",
+        "expression": "!IS_DYNAMIC_OBJECT(b) || POINTER_OFFSET(b) + 8l >= 0l && OBJECT_SIZE(b) >= (unsigned long int)POINTER_OFFSET(b) + 12ul",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 35
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.83": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in b->size",
+        "expression": "IS_DYNAMIC_OBJECT(b) || POINTER_OFFSET(b) + 8l >= 0l && OBJECT_SIZE(b) >= (unsigned long int)POINTER_OFFSET(b) + 12ul",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 35
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.84": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in b->size",
+        "expression": "!(POINTER_OBJECT(((const uint32_t *)NULL)) == POINTER_OBJECT(b)) || (char *)b + 8l == ((char *)NULL)",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 35
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.85": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in b->data",
+        "expression": "!(POINTER_OBJECT(b) == POINTER_OBJECT(((uint8_t * const *)NULL)))",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 35
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.86": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in b->data",
+        "expression": "!IS_INVALID_POINTER(b)",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 35
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.87": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in b->data",
+        "expression": "!(POINTER_OBJECT(b) == POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 35
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.88": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in b->data",
+        "expression": "!(POINTER_OBJECT(b) == POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 35
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.89": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside dynamic object bounds in b->data",
+        "expression": "!IS_DYNAMIC_OBJECT(b) || POINTER_OFFSET(b) >= 0l && OBJECT_SIZE(b) >= (unsigned long int)POINTER_OFFSET(b) + 8ul",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 35
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.90": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in b->data",
+        "expression": "IS_DYNAMIC_OBJECT(b) || POINTER_OFFSET(b) >= 0l && OBJECT_SIZE(b) >= (unsigned long int)POINTER_OFFSET(b) + 8ul",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 35
+        }
+      },
+      "s2n_blob_validate.pointer_dereference.91": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in b->data",
+        "expression": "!(POINTER_OBJECT(((uint8_t * const *)NULL)) == POINTER_OBJECT(b)) || b == ((const struct s2n_blob *)NULL)",
+        "location": {
+          "file": "utils/s2n_blob.c",
+          "function": "s2n_blob_validate",
+          "line": 35
+        }
+      },
+      "__builtin___memset_chk.overflow.1": {
+        "class": "overflow",
+        "description": "arithmetic overflow on unsigned to signed type conversion in (signed long int)n",
+        "expression": "!(n >= 9223372036854775808ul)",
+        "location": {
+          "file": "<builtin-library-__builtin___memset_chk>",
+          "function": "__builtin___memset_chk",
+          "line": 33
+        }
+      },
+      "__builtin___memset_chk.overflow.2": {
+        "class": "overflow",
+        "description": "arithmetic overflow on signed to unsigned type conversion in (unsigned long int)(signed long int)n",
+        "expression": "(signed long int)n >= 0l",
+        "location": {
+          "file": "<builtin-library-__builtin___memset_chk>",
+          "function": "__builtin___memset_chk",
+          "line": 33
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,195 @@
+{
+  "viewer-coverage": {
+    "coverage": {
+      "stuffer/s2n_stuffer.c": {
+        "s2n_stuffer_validate": {
+          "32": "both",
+          "33": "hit",
+          "36": "both",
+          "37": "both",
+          "38": "both",
+          "39": "hit",
+          "40": "hit"
+        },
+        "s2n_stuffer_wipe": {
+          "253": "hit",
+          "254": "both",
+          "257": "hit",
+          "258": "hit",
+          "259": "hit",
+          "260": "hit",
+          "261": "hit",
+          "262": "hit"
+        }
+      },
+      "tests/cbmc/proofs/s2n_stuffer_wipe/s2n_stuffer_wipe_harness.c": {
+        "s2n_stuffer_wipe_harness": {
+          "24": "hit",
+          "29": "hit",
+          "30": "hit",
+          "31": "hit",
+          "32": "hit",
+          "33": "hit",
+          "34": "hit",
+          "35": "hit",
+          "36": "hit"
+        }
+      },
+      "tests/cbmc/sources/make_common_datastructures.c": {
+        "cbmc_allocate_s2n_stuffer": {
+          "48": "hit",
+          "49": "hit",
+          "50": "hit",
+          "51": "hit"
+        },
+        "ensure_s2n_blob_has_allocated_fields": {
+          "27": "hit",
+          "28": "hit",
+          "29": "hit",
+          "30": "hit",
+          "31": "hit",
+          "32": "hit"
+        },
+        "ensure_s2n_stuffer_has_allocated_fields": {
+          "43": "hit",
+          "44": "hit"
+        }
+      },
+      "utils/s2n_blob.c": {
+        "s2n_blob_validate": {
+          "29": "both",
+          "30": "both",
+          "31": "both",
+          "32": "both",
+          "33": "both",
+          "34": "both",
+          "35": "both",
+          "36": "hit",
+          "37": "hit"
+        }
+      },
+      "utils/s2n_result.c": {
+        "s2n_result_is_ok": {
+          "86": "hit",
+          "87": "hit"
+        }
+      }
+    },
+    "function_coverage": {
+      "stuffer/s2n_stuffer.c": {
+        "s2n_stuffer_validate": {
+          "hit": 7,
+          "percentage": 1.0,
+          "total": 7
+        },
+        "s2n_stuffer_wipe": {
+          "hit": 8,
+          "percentage": 1.0,
+          "total": 8
+        }
+      },
+      "tests/cbmc/proofs/s2n_stuffer_wipe/s2n_stuffer_wipe_harness.c": {
+        "s2n_stuffer_wipe_harness": {
+          "hit": 9,
+          "percentage": 1.0,
+          "total": 9
+        }
+      },
+      "tests/cbmc/sources/make_common_datastructures.c": {
+        "cbmc_allocate_s2n_stuffer": {
+          "hit": 4,
+          "percentage": 1.0,
+          "total": 4
+        },
+        "ensure_s2n_blob_has_allocated_fields": {
+          "hit": 6,
+          "percentage": 1.0,
+          "total": 6
+        },
+        "ensure_s2n_stuffer_has_allocated_fields": {
+          "hit": 2,
+          "percentage": 1.0,
+          "total": 2
+        }
+      },
+      "utils/s2n_blob.c": {
+        "s2n_blob_validate": {
+          "hit": 9,
+          "percentage": 1.0,
+          "total": 9
+        }
+      },
+      "utils/s2n_result.c": {
+        "s2n_result_is_ok": {
+          "hit": 2,
+          "percentage": 1.0,
+          "total": 2
+        }
+      }
+    },
+    "line_coverage": {
+      "stuffer/s2n_stuffer.c": {
+        "32": "both",
+        "33": "hit",
+        "36": "both",
+        "37": "both",
+        "38": "both",
+        "39": "hit",
+        "40": "hit",
+        "253": "hit",
+        "254": "both",
+        "257": "hit",
+        "258": "hit",
+        "259": "hit",
+        "260": "hit",
+        "261": "hit",
+        "262": "hit"
+      },
+      "tests/cbmc/proofs/s2n_stuffer_wipe/s2n_stuffer_wipe_harness.c": {
+        "24": "hit",
+        "29": "hit",
+        "30": "hit",
+        "31": "hit",
+        "32": "hit",
+        "33": "hit",
+        "34": "hit",
+        "35": "hit",
+        "36": "hit"
+      },
+      "tests/cbmc/sources/make_common_datastructures.c": {
+        "27": "hit",
+        "28": "hit",
+        "29": "hit",
+        "30": "hit",
+        "31": "hit",
+        "32": "hit",
+        "43": "hit",
+        "44": "hit",
+        "48": "hit",
+        "49": "hit",
+        "50": "hit",
+        "51": "hit"
+      },
+      "utils/s2n_blob.c": {
+        "29": "both",
+        "30": "both",
+        "31": "both",
+        "32": "both",
+        "33": "both",
+        "34": "both",
+        "35": "both",
+        "36": "hit",
+        "37": "hit"
+      },
+      "utils/s2n_result.c": {
+        "86": "hit",
+        "87": "hit"
+      }
+    },
+    "overall_coverage": {
+      "hit": 47,
+      "percentage": 1.0,
+      "total": 47
+    }
+  }
+}

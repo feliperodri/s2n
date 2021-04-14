@@ -11,14 +11,15 @@
 # implied. See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Enough to get full coverage with 40 seconds of runtime.
+# Enough to get full coverage with 10 seconds of runtime.
 BLOB_SIZE = 10
 DEFINES += -DBLOB_SIZE=$(BLOB_SIZE)
 
-#CONTRACTS_FLAG = --replace-all-calls-with-contracts
-CONTRACTS_FLAG = --enforce-all-contracts
+CHECK_FUNCTION_CONTRACTS = s2n_stuffer_skip_expected_char
 
-PROOF_UID = s2n_stuffer_skip_to_char
+CBMCFLAGS +=
+
+PROOF_UID = s2n_stuffer_skip_expected_char
 HARNESS_ENTRY = $(PROOF_UID)_harness
 HARNESS_FILE = $(HARNESS_ENTRY).c
 
@@ -28,14 +29,16 @@ PROOF_SOURCES += $(PROOF_SOURCE)/make_common_datastructures.c
 
 PROJECT_SOURCES += $(SRCDIR)/stuffer/s2n_stuffer.c
 PROJECT_SOURCES += $(SRCDIR)/stuffer/s2n_stuffer_text.c
-PROJECT_SOURCES += $(SRCDIR)/stuffer/s2n_stuffer_network_order.c
 PROJECT_SOURCES += $(SRCDIR)/utils/s2n_blob.c
-PROJECT_SOURCES += $(SRCDIR)/utils/s2n_ensure.c
 PROJECT_SOURCES += $(SRCDIR)/utils/s2n_result.c
 
-UNWINDSET += s2n_stuffer_skip_to_char.1:$(call addone,$(BLOB_SIZE))
-
-# Functions with contracts will have mangled names when using --enforce-all-contracts
-UNWINDSET += __CPROVER_contracts_original_s2n_stuffer_skip_to_char.0:$(call addone,$(BLOB_SIZE))
+# Functions with contracts will have mangled names when using --enforce-contract
+UNWINDSET += __CPROVER_contracts_original_s2n_stuffer_skip_expected_char.0:$(call addone,$(BLOB_SIZE))
+UNWINDSET += __CPROVER_contracts_original_s2n_stuffer_skip_expected_char.1:$(call addone,$(BLOB_SIZE))
+UNWINDSET += __CPROVER_contracts_original_s2n_stuffer_skip_expected_char.2:$(call addone,$(BLOB_SIZE))
+UNWINDSET += __CPROVER_contracts_original_s2n_stuffer_skip_expected_char.3:$(call addone,$(BLOB_SIZE))
+UNWINDSET += __CPROVER_contracts_original_s2n_stuffer_skip_expected_char.4:$(call addone,$(BLOB_SIZE))
+UNWINDSET += __CPROVER_contracts_original_s2n_stuffer_skip_expected_char.5:$(call addone,$(BLOB_SIZE))
+UNWINDSET += __CPROVER_contracts_original_s2n_stuffer_skip_expected_char.6:$(call addone,$(BLOB_SIZE))
 
 include ../Makefile.common

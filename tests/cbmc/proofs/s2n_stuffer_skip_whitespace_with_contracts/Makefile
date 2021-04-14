@@ -11,14 +11,15 @@
 # implied. See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Enough to get full coverage with 40 seconds of runtime.
-BLOB_SIZE = 10
-DEFINES += -DBLOB_SIZE=$(BLOB_SIZE)
+# Enough to get full coverage with 4 minutes of runtime.
+MAX_BLOB_SIZE = 2
+DEFINES += -DMAX_BLOB_SIZE=$(MAX_BLOB_SIZE)
 
-#CONTRACTS_FLAG = --replace-all-calls-with-contracts
-CONTRACTS_FLAG = --enforce-all-contracts
+CONTRACTS_FLAG = --enforce-contract s2n_stuffer_skip_whitespace
 
-PROOF_UID = s2n_stuffer_skip_to_char
+CHECKFLAGS +=
+
+PROOF_UID = s2n_stuffer_skip_whitespace
 HARNESS_ENTRY = $(PROOF_UID)_harness
 HARNESS_FILE = $(HARNESS_ENTRY).c
 
@@ -28,14 +29,15 @@ PROOF_SOURCES += $(PROOF_SOURCE)/make_common_datastructures.c
 
 PROJECT_SOURCES += $(SRCDIR)/stuffer/s2n_stuffer.c
 PROJECT_SOURCES += $(SRCDIR)/stuffer/s2n_stuffer_text.c
-PROJECT_SOURCES += $(SRCDIR)/stuffer/s2n_stuffer_network_order.c
 PROJECT_SOURCES += $(SRCDIR)/utils/s2n_blob.c
-PROJECT_SOURCES += $(SRCDIR)/utils/s2n_ensure.c
 PROJECT_SOURCES += $(SRCDIR)/utils/s2n_result.c
 
-UNWINDSET += s2n_stuffer_skip_to_char.1:$(call addone,$(BLOB_SIZE))
-
-# Functions with contracts will have mangled names when using --enforce-all-contracts
-UNWINDSET += __CPROVER_contracts_original_s2n_stuffer_skip_to_char.0:$(call addone,$(BLOB_SIZE))
+UNWINDSET += __CPROVER_contracts_original_s2n_stuffer_skip_whitespace.0:$(call addone,$(MAX_BLOB_SIZE))
+UNWINDSET += __CPROVER_contracts_original_s2n_stuffer_skip_whitespace.1:$(call addone,$(MAX_BLOB_SIZE))
+UNWINDSET += __CPROVER_contracts_original_s2n_stuffer_skip_whitespace.2:$(call addone,$(MAX_BLOB_SIZE))
+UNWINDSET += __CPROVER_contracts_original_s2n_stuffer_skip_whitespace.3:$(call addone,$(MAX_BLOB_SIZE))
+UNWINDSET += __CPROVER_contracts_original_s2n_stuffer_skip_whitespace.4:$(call addone,$(MAX_BLOB_SIZE))
+UNWINDSET += __CPROVER_contracts_original_s2n_stuffer_skip_whitespace.5:$(call addone,$(MAX_BLOB_SIZE))
+UNWINDSET += __CPROVER_contracts_original_s2n_stuffer_skip_whitespace.6:$(call addone,$(MAX_BLOB_SIZE))
 
 include ../Makefile.common

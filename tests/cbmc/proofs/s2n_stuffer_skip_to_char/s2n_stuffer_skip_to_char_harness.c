@@ -25,9 +25,11 @@ void s2n_stuffer_skip_to_char_harness()
 {
     /* Non-deterministic inputs. */
     struct s2n_stuffer *stuffer = cbmc_allocate_s2n_stuffer();
+    const char target;
+
+    /* Assume preconditions. */
     __CPROVER_assume(s2n_result_is_ok(s2n_stuffer_validate(stuffer)));
     __CPROVER_assume(s2n_blob_is_bounded(&stuffer->blob, BLOB_SIZE));
-    const char target;
 
     /* Save previous state from stuffer. */
     struct s2n_stuffer            old_stuffer = *stuffer;

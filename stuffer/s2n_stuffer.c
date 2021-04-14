@@ -157,6 +157,30 @@ int s2n_stuffer_resize_if_empty(struct s2n_stuffer *stuffer, const uint32_t size
 }
 
 int s2n_stuffer_rewrite(struct s2n_stuffer *stuffer)
+__CPROVER_requires(
+    stuffer != NULL &&
+    S2N_IMPLIES(stuffer->blob.data == NULL, stuffer->blob.size == 0) &&
+    S2N_IMPLIES(stuffer->blob.data == NULL, stuffer->blob.allocated == 0) &&
+    S2N_IMPLIES(stuffer->blob.growable == 0, stuffer->blob.allocated == 0) &&
+    S2N_IMPLIES(stuffer->blob.growable != 0, stuffer->blob.size <= stuffer->blob.allocated) &&
+    S2N_MEM_IS_READABLE(stuffer->blob.data, stuffer->blob.allocated) &&
+    S2N_MEM_IS_READABLE(stuffer->blob.data, stuffer->blob.size) &&
+    stuffer->high_water_mark <= stuffer->blob.size &&
+    stuffer->write_cursor <= stuffer->high_water_mark &&
+    stuffer->read_cursor <= stuffer->write_cursor
+)
+__CPROVER_ensures(
+    stuffer != NULL &&
+    S2N_IMPLIES(stuffer->blob.data == NULL, stuffer->blob.size == 0) &&
+    S2N_IMPLIES(stuffer->blob.data == NULL, stuffer->blob.allocated == 0) &&
+    S2N_IMPLIES(stuffer->blob.growable == 0, stuffer->blob.allocated == 0) &&
+    S2N_IMPLIES(stuffer->blob.growable != 0, stuffer->blob.size <= stuffer->blob.allocated) &&
+    S2N_MEM_IS_READABLE(stuffer->blob.data, stuffer->blob.allocated) &&
+    S2N_MEM_IS_READABLE(stuffer->blob.data, stuffer->blob.size) &&
+    stuffer->high_water_mark <= stuffer->blob.size &&
+    stuffer->write_cursor <= stuffer->high_water_mark &&
+    stuffer->read_cursor <= stuffer->write_cursor
+)
 {
     POSIX_PRECONDITION(s2n_stuffer_validate(stuffer));
     stuffer->write_cursor = 0;
@@ -166,6 +190,31 @@ int s2n_stuffer_rewrite(struct s2n_stuffer *stuffer)
 }
 
 int s2n_stuffer_rewind_read(struct s2n_stuffer *stuffer, const uint32_t size)
+__CPROVER_requires(
+    stuffer != NULL &&
+    S2N_IMPLIES(stuffer->blob.data == NULL, stuffer->blob.size == 0) &&
+    S2N_IMPLIES(stuffer->blob.data == NULL, stuffer->blob.allocated == 0) &&
+    S2N_IMPLIES(stuffer->blob.growable == 0, stuffer->blob.allocated == 0) &&
+    S2N_IMPLIES(stuffer->blob.growable != 0, stuffer->blob.size <= stuffer->blob.allocated) &&
+    S2N_MEM_IS_READABLE(stuffer->blob.data, stuffer->blob.allocated) &&
+    S2N_MEM_IS_READABLE(stuffer->blob.data, stuffer->blob.size) &&
+    stuffer->high_water_mark <= stuffer->blob.size &&
+    stuffer->write_cursor <= stuffer->high_water_mark &&
+    stuffer->read_cursor <= stuffer->write_cursor /*&&
+    stuffer->read_cursor >= size*/
+)
+__CPROVER_ensures(
+    stuffer != NULL &&
+    S2N_IMPLIES(stuffer->blob.data == NULL, stuffer->blob.size == 0) &&
+    S2N_IMPLIES(stuffer->blob.data == NULL, stuffer->blob.allocated == 0) &&
+    S2N_IMPLIES(stuffer->blob.growable == 0, stuffer->blob.allocated == 0) &&
+    S2N_IMPLIES(stuffer->blob.growable != 0, stuffer->blob.size <= stuffer->blob.allocated) &&
+    S2N_MEM_IS_READABLE(stuffer->blob.data, stuffer->blob.allocated) &&
+    S2N_MEM_IS_READABLE(stuffer->blob.data, stuffer->blob.size) &&
+    stuffer->high_water_mark <= stuffer->blob.size &&
+    stuffer->write_cursor <= stuffer->high_water_mark &&
+    stuffer->read_cursor <= stuffer->write_cursor
+)
 {
     POSIX_PRECONDITION(s2n_stuffer_validate(stuffer));
     POSIX_ENSURE(stuffer->read_cursor >= size, S2N_ERR_STUFFER_OUT_OF_DATA);
@@ -217,6 +266,7 @@ int s2n_stuffer_wipe(struct s2n_stuffer *stuffer)
 }
 
 int s2n_stuffer_skip_read(struct s2n_stuffer *stuffer, uint32_t n)
+__CPROVER_assigns(stuffer->read_cursor)
 {
     POSIX_PRECONDITION(s2n_stuffer_validate(stuffer));
     POSIX_ENSURE(s2n_stuffer_data_available(stuffer) >= n, S2N_ERR_STUFFER_OUT_OF_DATA);
@@ -235,6 +285,7 @@ void *s2n_stuffer_raw_read(struct s2n_stuffer *stuffer, uint32_t data_len)
 }
 
 int s2n_stuffer_read(struct s2n_stuffer *stuffer, struct s2n_blob *out)
+__CPROVER_assigns(stuffer->read_cursor)
 {
     POSIX_ENSURE_REF(out);
 
@@ -255,6 +306,7 @@ int s2n_stuffer_erase_and_read(struct s2n_stuffer *stuffer, struct s2n_blob *out
 }
 
 int s2n_stuffer_read_bytes(struct s2n_stuffer *stuffer, uint8_t * data, uint32_t size)
+__CPROVER_assigns(stuffer->read_cursor)
 {
     POSIX_ENSURE_REF(data);
     POSIX_PRECONDITION(s2n_stuffer_validate(stuffer));
@@ -280,6 +332,7 @@ int s2n_stuffer_erase_and_read_bytes(struct s2n_stuffer *stuffer, uint8_t * data
 }
 
 int s2n_stuffer_skip_write(struct s2n_stuffer *stuffer, const uint32_t n)
+/*__CPROVER_assigns(stuffer->write_cursor)*/
 {
     POSIX_PRECONDITION(s2n_stuffer_validate(stuffer));
     POSIX_GUARD(s2n_stuffer_reserve_space(stuffer, n));
@@ -306,6 +359,31 @@ int s2n_stuffer_write(struct s2n_stuffer *stuffer, const struct s2n_blob *in)
 }
 
 int s2n_stuffer_write_bytes(struct s2n_stuffer *stuffer, const uint8_t * data, const uint32_t size)
+__CPROVER_requires(
+    stuffer != NULL &&
+    S2N_IMPLIES(stuffer->blob.data == NULL, stuffer->blob.size == 0) &&
+    S2N_IMPLIES(stuffer->blob.data == NULL, stuffer->blob.allocated == 0) &&
+    S2N_IMPLIES(stuffer->blob.growable == 0, stuffer->blob.allocated == 0) &&
+    S2N_IMPLIES(stuffer->blob.growable != 0, stuffer->blob.size <= stuffer->blob.allocated) &&
+    S2N_MEM_IS_READABLE(stuffer->blob.data, stuffer->blob.allocated) &&
+    S2N_MEM_IS_READABLE(stuffer->blob.data, stuffer->blob.size) &&
+    stuffer->high_water_mark <= stuffer->blob.size &&
+    stuffer->write_cursor <= stuffer->high_water_mark &&
+    stuffer->read_cursor <= stuffer->write_cursor &&
+    S2N_MEM_IS_READABLE(data, size)
+)
+__CPROVER_ensures(
+    stuffer != NULL &&
+    S2N_IMPLIES(stuffer->blob.data == NULL, stuffer->blob.size == 0) &&
+    S2N_IMPLIES(stuffer->blob.data == NULL, stuffer->blob.allocated == 0) &&
+    S2N_IMPLIES(stuffer->blob.growable == 0, stuffer->blob.allocated == 0) &&
+    S2N_IMPLIES(stuffer->blob.growable != 0, stuffer->blob.size <= stuffer->blob.allocated) &&
+    S2N_MEM_IS_READABLE(stuffer->blob.data, stuffer->blob.allocated) &&
+    S2N_MEM_IS_READABLE(stuffer->blob.data, stuffer->blob.size) &&
+    stuffer->high_water_mark <= stuffer->blob.size &&
+    stuffer->write_cursor <= stuffer->high_water_mark &&
+    stuffer->read_cursor <= stuffer->write_cursor
+)
 {
     POSIX_ENSURE(S2N_MEM_IS_READABLE(data, size), S2N_ERR_SAFETY);
     POSIX_PRECONDITION(s2n_stuffer_validate(stuffer));

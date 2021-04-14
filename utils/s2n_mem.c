@@ -116,7 +116,8 @@ static int s2n_mem_malloc_mlock_impl(void **ptr, uint32_t requested, uint32_t *a
         POSIX_BAIL(S2N_ERR_MLOCK);
     }
 
-    POSIX_ENSURE(*ptr != NULL, S2N_ERR_ALLOC);
+    //POSIX_ENSURE(*ptr != NULL, S2N_ERR_ALLOC);
+    if(*ptr == NULL) return S2N_ERR_ALLOC;
 
     return S2N_SUCCESS;
 }
@@ -124,7 +125,8 @@ static int s2n_mem_malloc_mlock_impl(void **ptr, uint32_t requested, uint32_t *a
 static int s2n_mem_malloc_no_mlock_impl(void **ptr, uint32_t requested, uint32_t *allocated)
 {
     *ptr = malloc(requested);
-    POSIX_ENSURE(*ptr != NULL, S2N_ERR_ALLOC);
+    //POSIX_ENSURE(*ptr != NULL, S2N_ERR_ALLOC);
+    if(*ptr == NULL) return S2N_ERR_ALLOC;
     *allocated = requested;
 
     return S2N_SUCCESS;
@@ -197,7 +199,8 @@ int s2n_realloc(struct s2n_blob *b, uint32_t size)
     }
 
     POSIX_ENSURE(new_memory.allocated >= new_memory.size, S2N_ERR_ALLOC);
-    POSIX_ENSURE(new_memory.data != NULL, S2N_ERR_ALLOC);
+    //POSIX_ENSURE(new_memory.data != NULL, S2N_ERR_ALLOC);
+    if(new_memory.data == NULL) return S2N_ERR_ALLOC;
 
     if (b->size) {
         POSIX_CHECKED_MEMCPY(new_memory.data, b->data, b->size);

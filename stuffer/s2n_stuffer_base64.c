@@ -73,9 +73,14 @@ bool s2n_is_base64_char(unsigned char c)
  * signed bit may be handled.
  */
 int s2n_stuffer_read_base64(struct s2n_stuffer *stuffer, struct s2n_stuffer *out)
+__CPROVER_requires(s2n_result_is_ok(s2n_stuffer_validate(stuffer)))
+__CPROVER_requires(s2n_result_is_ok(s2n_stuffer_validate(out)))
+__CPROVER_ensures(S2N_IMPLIES(__CPROVER_return_value >= S2N_SUCCESS, s2n_result_is_ok(s2n_stuffer_validate(stuffer))))
+__CPROVER_ensures(S2N_IMPLIES(__CPROVER_return_value >= S2N_SUCCESS, s2n_result_is_ok(s2n_stuffer_validate(out))))
+__CPROVER_assigns(stuffer->read_cursor, *out)
 {
-    POSIX_PRECONDITION(s2n_stuffer_validate(stuffer));
-    POSIX_PRECONDITION(s2n_stuffer_validate(out));
+    /*POSIX_PRECONDITION(s2n_stuffer_validate(stuffer));
+    POSIX_PRECONDITION(s2n_stuffer_validate(out));*/
     int bytes_this_round = 3;
     s2n_stack_blob(o, 4, 4);
 
@@ -142,6 +147,8 @@ int s2n_stuffer_read_base64(struct s2n_stuffer *stuffer, struct s2n_stuffer *out
         }
     } while (bytes_this_round == 3);
 
+    /*POSIX_POSTCONDITION(s2n_stuffer_validate(stuffer));
+    POSIX_POSTCONDITION(s2n_stuffer_validate(out));*/
     return S2N_SUCCESS;
 }
 

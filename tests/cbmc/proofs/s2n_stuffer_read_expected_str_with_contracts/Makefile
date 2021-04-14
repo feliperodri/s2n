@@ -11,31 +11,29 @@
 # implied. See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Enough to get full coverage with 40 seconds of runtime.
-BLOB_SIZE = 10
-DEFINES += -DBLOB_SIZE=$(BLOB_SIZE)
+# Enough to get full coverage with 1 minute of runtime.
+MAX_STRING_LEN = 10
+DEFINES += -DMAX_STRING_LEN=$(MAX_STRING_LEN)
 
-#CONTRACTS_FLAG = --replace-all-calls-with-contracts
-CONTRACTS_FLAG = --enforce-all-contracts
+CONTRACTS_FLAG = --enforce-contract s2n_stuffer_read_expected_str
 
-PROOF_UID = s2n_stuffer_skip_to_char
+PROOF_UID = s2n_stuffer_read_expected_str
 HARNESS_ENTRY = $(PROOF_UID)_harness
 HARNESS_FILE = $(HARNESS_ENTRY).c
 
 PROOF_SOURCES += $(PROOFDIR)/$(HARNESS_FILE)
 PROOF_SOURCES += $(PROOF_SOURCE)/cbmc_utils.c
 PROOF_SOURCES += $(PROOF_SOURCE)/make_common_datastructures.c
+PROOF_SOURCES += $(PROOF_STUB)/s2n_calculate_stacktrace.c
 
 PROJECT_SOURCES += $(SRCDIR)/stuffer/s2n_stuffer.c
-PROJECT_SOURCES += $(SRCDIR)/stuffer/s2n_stuffer_text.c
 PROJECT_SOURCES += $(SRCDIR)/stuffer/s2n_stuffer_network_order.c
+PROJECT_SOURCES += $(SRCDIR)/stuffer/s2n_stuffer_text.c
 PROJECT_SOURCES += $(SRCDIR)/utils/s2n_blob.c
 PROJECT_SOURCES += $(SRCDIR)/utils/s2n_ensure.c
 PROJECT_SOURCES += $(SRCDIR)/utils/s2n_result.c
 
-UNWINDSET += s2n_stuffer_skip_to_char.1:$(call addone,$(BLOB_SIZE))
-
-# Functions with contracts will have mangled names when using --enforce-all-contracts
-UNWINDSET += __CPROVER_contracts_original_s2n_stuffer_skip_to_char.0:$(call addone,$(BLOB_SIZE))
+UNWINDSET += strlen.0:$(call addone,$(MAX_STRING_LEN))
+UNWINDSET += memcmp.0:$(call addone,$(MAX_STRING_LEN))
 
 include ../Makefile.common

@@ -1,0 +1,196 @@
+{
+  "viewer-loop": {
+    "loops": {
+      "s2n_stuffer_validate.0": {
+        "file": "stuffer/s2n_stuffer.c",
+        "function": "s2n_stuffer_validate",
+        "line": 32
+      },
+      "s2n_stuffer_validate.1": {
+        "file": "stuffer/s2n_stuffer.c",
+        "function": "s2n_stuffer_validate",
+        "line": 32
+      },
+      "s2n_stuffer_validate.2": {
+        "file": "stuffer/s2n_stuffer.c",
+        "function": "s2n_stuffer_validate",
+        "line": 32
+      },
+      "s2n_stuffer_validate.3": {
+        "file": "stuffer/s2n_stuffer.c",
+        "function": "s2n_stuffer_validate",
+        "line": 33
+      },
+      "s2n_stuffer_validate.4": {
+        "file": "stuffer/s2n_stuffer.c",
+        "function": "s2n_stuffer_validate",
+        "line": 36
+      },
+      "s2n_stuffer_validate.5": {
+        "file": "stuffer/s2n_stuffer.c",
+        "function": "s2n_stuffer_validate",
+        "line": 36
+      },
+      "s2n_stuffer_validate.6": {
+        "file": "stuffer/s2n_stuffer.c",
+        "function": "s2n_stuffer_validate",
+        "line": 36
+      },
+      "s2n_stuffer_validate.7": {
+        "file": "stuffer/s2n_stuffer.c",
+        "function": "s2n_stuffer_validate",
+        "line": 37
+      },
+      "s2n_stuffer_validate.8": {
+        "file": "stuffer/s2n_stuffer.c",
+        "function": "s2n_stuffer_validate",
+        "line": 37
+      },
+      "s2n_stuffer_validate.9": {
+        "file": "stuffer/s2n_stuffer.c",
+        "function": "s2n_stuffer_validate",
+        "line": 37
+      },
+      "s2n_stuffer_validate.10": {
+        "file": "stuffer/s2n_stuffer.c",
+        "function": "s2n_stuffer_validate",
+        "line": 38
+      },
+      "s2n_stuffer_validate.11": {
+        "file": "stuffer/s2n_stuffer.c",
+        "function": "s2n_stuffer_validate",
+        "line": 38
+      },
+      "s2n_stuffer_validate.12": {
+        "file": "stuffer/s2n_stuffer.c",
+        "function": "s2n_stuffer_validate",
+        "line": 38
+      },
+      "s2n_stuffer_wipe.0": {
+        "file": "stuffer/s2n_stuffer.c",
+        "function": "s2n_stuffer_wipe",
+        "line": 254
+      },
+      "s2n_stuffer_wipe.1": {
+        "file": "stuffer/s2n_stuffer.c",
+        "function": "s2n_stuffer_wipe",
+        "line": 254
+      },
+      "s2n_stuffer_wipe.2": {
+        "file": "stuffer/s2n_stuffer.c",
+        "function": "s2n_stuffer_wipe",
+        "line": 254
+      },
+      "s2n_stuffer_wipe.3": {
+        "file": "stuffer/s2n_stuffer.c",
+        "function": "s2n_stuffer_wipe",
+        "line": 254
+      },
+      "s2n_blob_validate.0": {
+        "file": "utils/s2n_blob.c",
+        "function": "s2n_blob_validate",
+        "line": 29
+      },
+      "s2n_blob_validate.1": {
+        "file": "utils/s2n_blob.c",
+        "function": "s2n_blob_validate",
+        "line": 29
+      },
+      "s2n_blob_validate.2": {
+        "file": "utils/s2n_blob.c",
+        "function": "s2n_blob_validate",
+        "line": 29
+      },
+      "s2n_blob_validate.3": {
+        "file": "utils/s2n_blob.c",
+        "function": "s2n_blob_validate",
+        "line": 30
+      },
+      "s2n_blob_validate.4": {
+        "file": "utils/s2n_blob.c",
+        "function": "s2n_blob_validate",
+        "line": 30
+      },
+      "s2n_blob_validate.5": {
+        "file": "utils/s2n_blob.c",
+        "function": "s2n_blob_validate",
+        "line": 30
+      },
+      "s2n_blob_validate.6": {
+        "file": "utils/s2n_blob.c",
+        "function": "s2n_blob_validate",
+        "line": 31
+      },
+      "s2n_blob_validate.7": {
+        "file": "utils/s2n_blob.c",
+        "function": "s2n_blob_validate",
+        "line": 31
+      },
+      "s2n_blob_validate.8": {
+        "file": "utils/s2n_blob.c",
+        "function": "s2n_blob_validate",
+        "line": 31
+      },
+      "s2n_blob_validate.9": {
+        "file": "utils/s2n_blob.c",
+        "function": "s2n_blob_validate",
+        "line": 32
+      },
+      "s2n_blob_validate.10": {
+        "file": "utils/s2n_blob.c",
+        "function": "s2n_blob_validate",
+        "line": 32
+      },
+      "s2n_blob_validate.11": {
+        "file": "utils/s2n_blob.c",
+        "function": "s2n_blob_validate",
+        "line": 32
+      },
+      "s2n_blob_validate.12": {
+        "file": "utils/s2n_blob.c",
+        "function": "s2n_blob_validate",
+        "line": 33
+      },
+      "s2n_blob_validate.13": {
+        "file": "utils/s2n_blob.c",
+        "function": "s2n_blob_validate",
+        "line": 33
+      },
+      "s2n_blob_validate.14": {
+        "file": "utils/s2n_blob.c",
+        "function": "s2n_blob_validate",
+        "line": 33
+      },
+      "s2n_blob_validate.15": {
+        "file": "utils/s2n_blob.c",
+        "function": "s2n_blob_validate",
+        "line": 34
+      },
+      "s2n_blob_validate.16": {
+        "file": "utils/s2n_blob.c",
+        "function": "s2n_blob_validate",
+        "line": 34
+      },
+      "s2n_blob_validate.17": {
+        "file": "utils/s2n_blob.c",
+        "function": "s2n_blob_validate",
+        "line": 34
+      },
+      "s2n_blob_validate.18": {
+        "file": "utils/s2n_blob.c",
+        "function": "s2n_blob_validate",
+        "line": 35
+      },
+      "s2n_blob_validate.19": {
+        "file": "utils/s2n_blob.c",
+        "function": "s2n_blob_validate",
+        "line": 35
+      },
+      "s2n_blob_validate.20": {
+        "file": "utils/s2n_blob.c",
+        "function": "s2n_blob_validate",
+        "line": 35
+      }
+    }
+  }
+}
