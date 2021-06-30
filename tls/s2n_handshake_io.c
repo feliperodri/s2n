@@ -859,6 +859,8 @@ skip_cache_lookup:
 }
 
 int s2n_conn_set_handshake_no_client_cert(struct s2n_connection *conn)
+__CPROVER_requires(conn != NULL)
+__CPROVER_assigns(s2n_errno, s2n_debug_str)
 {
     s2n_cert_auth_type client_cert_auth_type;
     POSIX_GUARD(s2n_connection_get_client_auth_type(conn, &client_cert_auth_type));

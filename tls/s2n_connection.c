@@ -897,9 +897,12 @@ int s2n_connection_get_protocol_preferences(struct s2n_connection *conn, struct 
 }
 
 int s2n_connection_get_client_auth_type(struct s2n_connection *conn, s2n_cert_auth_type *client_cert_auth_type)
+__CPROVER_requires(conn != NULL && client_cert_auth_type != NULL)
+__CPROVER_assigns(*client_cert_auth_type)
+__CPROVER_ensures(__CPROVER_return_value == 0 && (*client_cert_auth_type == S2N_CERT_AUTH_NONE || *client_cert_auth_type == S2N_CERT_AUTH_REQUIRED || *client_cert_auth_type == S2N_CERT_AUTH_OPTIONAL))
 {
-    POSIX_ENSURE_REF(conn);
-    POSIX_ENSURE_REF(client_cert_auth_type);
+    // POSIX_ENSURE_REF(conn);
+    // POSIX_ENSURE_REF(client_cert_auth_type);
 
     if (conn->client_cert_auth_type_overridden) {
         *client_cert_auth_type = conn->client_cert_auth_type;
