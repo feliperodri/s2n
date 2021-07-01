@@ -14,12 +14,14 @@
  */
 
 #include "api/s2n.h"
+#include "tls/s2n_handshake.h"
 
-void s2n_conn_set_handshake_no_client_cert_harness()
+void s2n_handshake_type_set_flag_harness()
 {
     /* Non-deterministic input. */
-    struct s2n_connection *s2n_connection;
+    struct s2n_connection *conn;
+    s2n_handshake_type_flag flag;
     
     /* Operation under verification. */
-    s2n_conn_set_handshake_no_client_cert(s2n_connection);
+    s2n_handshake_type_set_flag(conn, flag);
 }

@@ -1,0 +1,917 @@
+{
+  "viewer-coverage": {
+    "coverage": {
+      "crypto/s2n_drbg.c": {
+        "s2n_drbg_bits": {
+          "57": "missed",
+          "58": "missed",
+          "59": "missed",
+          "61": "missed",
+          "62": "missed",
+          "63": "missed",
+          "66": "missed",
+          "67": "missed",
+          "68": "missed",
+          "69": "missed",
+          "70": "missed",
+          "72": "missed",
+          "73": "missed",
+          "76": "missed",
+          "77": "missed",
+          "78": "missed",
+          "79": "missed",
+          "81": "missed",
+          "83": "missed",
+          "84": "missed"
+        },
+        "s2n_drbg_block_encrypt": {
+          "47": "missed",
+          "48": "missed",
+          "49": "missed",
+          "50": "missed",
+          "52": "missed",
+          "53": "missed"
+        },
+        "s2n_drbg_generate": {
+          "194": "missed",
+          "195": "missed",
+          "196": "missed",
+          "198": "missed",
+          "203": "missed",
+          "204": "missed",
+          "205": "missed",
+          "207": "missed",
+          "208": "missed"
+        },
+        "s2n_drbg_instantiate": {
+          "153": "both",
+          "155": "hit",
+          "156": "both",
+          "158": "hit",
+          "160": "hit",
+          "161": "hit",
+          "162": "both",
+          "163": "hit",
+          "164": "missed",
+          "165": "missed",
+          "166": "missed",
+          "168": "missed",
+          "171": "both",
+          "172": "both",
+          "177": "hit",
+          "178": "both",
+          "181": "missed",
+          "182": "missed",
+          "184": "missed",
+          "187": "missed",
+          "189": "missed",
+          "190": "hit"
+        },
+        "s2n_drbg_mix": {
+          "141": "missed",
+          "143": "missed",
+          "144": "missed",
+          "146": "missed",
+          "148": "missed",
+          "149": "missed"
+        },
+        "s2n_drbg_mix_in_entropy": {
+          "112": "missed",
+          "113": "missed",
+          "114": "missed",
+          "116": "missed",
+          "118": "missed",
+          "119": "missed",
+          "120": "missed",
+          "122": "missed",
+          "124": "missed",
+          "125": "missed"
+        },
+        "s2n_drbg_seed": {
+          "129": "missed",
+          "131": "missed",
+          "132": "missed",
+          "134": "missed",
+          "136": "missed",
+          "137": "missed"
+        },
+        "s2n_drbg_update": {
+          "88": "missed",
+          "89": "missed",
+          "91": "missed",
+          "93": "missed",
+          "95": "missed",
+          "98": "missed",
+          "99": "missed",
+          "100": "missed",
+          "103": "missed",
+          "105": "missed",
+          "107": "missed",
+          "108": "missed"
+        },
+        "s2n_drbg_wipe": {
+          "212": "both",
+          "213": "hit",
+          "214": "missed",
+          "216": "missed",
+          "217": "missed",
+          "220": "hit",
+          "221": "hit",
+          "222": "hit"
+        },
+        "s2n_increment_drbg_counter": {
+          "34": "missed",
+          "35": "missed",
+          "36": "missed",
+          "41": "missed",
+          "42": "missed",
+          "43": "missed"
+        }
+      },
+      "tests/cbmc/aws-verification-model-for-libcrypto/source/evp_override.c": {
+        "EVP_CIPHER_CTX_free": {
+          "503": "missed",
+          "504": "missed",
+          "506": "missed"
+        },
+        "EVP_CIPHER_CTX_get_key_length": {
+          "1114": "hit",
+          "1115": "hit",
+          "1116": "hit"
+        },
+        "EVP_CIPHER_CTX_new": {
+          "429": "hit",
+          "430": "hit",
+          "431": "hit",
+          "432": "hit",
+          "433": "hit",
+          "434": "hit",
+          "435": "hit",
+          "436": "hit",
+          "438": "hit",
+          "439": "hit"
+        },
+        "EVP_CIPHER_CTX_reset": {
+          "1107": "hit",
+          "1108": "missed",
+          "1109": "hit",
+          "1110": "hit"
+        },
+        "EVP_EncryptInit_ex": {
+          "518": "hit",
+          "519": "hit",
+          "520": "hit",
+          "521": "hit",
+          "522": "hit",
+          "523": "hit",
+          "524": "hit"
+        },
+        "EVP_EncryptUpdate": {
+          "563": "missed",
+          "564": "missed",
+          "565": "missed",
+          "566": "missed",
+          "567": "missed",
+          "568": "missed",
+          "570": "missed",
+          "571": "missed",
+          "572": "missed",
+          "573": "missed",
+          "575": "missed",
+          "576": "missed",
+          "585": "missed",
+          "586": "missed",
+          "587": "missed",
+          "588": "missed",
+          "589": "missed"
+        },
+        "EVP_aes_128_ecb": {
+          "422": "hit",
+          "423": "hit"
+        }
+      },
+      "tests/cbmc/proofs/s2n_generate_new_client_session_id/s2n_generate_new_client_session_id_harness.c": {
+        "s2n_generate_new_client_session_id_harness": {
+          "21": "hit",
+          "24": "hit",
+          "27": "hit",
+          "32": "hit"
+        }
+      },
+      "tests/cbmc/stubs/s2n_calculate_stacktrace.c": {
+        "s2n_calculate_stacktrace": {
+          "20": "hit"
+        }
+      },
+      "tls/s2n_handshake_io.c": {
+        "s2n_generate_new_client_session_id": {
+          "700": "both",
+          "701": "hit",
+          "702": "hit",
+          "705": "both",
+          "706": "missed",
+          "707": "missed",
+          "709": "hit",
+          "710": "hit"
+        }
+      },
+      "utils/s2n_blob.c": {
+        "s2n_blob_init": {
+          "41": "missed",
+          "42": "missed",
+          "43": "missed",
+          "44": "missed",
+          "45": "missed",
+          "46": "missed"
+        },
+        "s2n_blob_slice": {
+          "58": "missed",
+          "59": "missed",
+          "61": "missed",
+          "62": "missed",
+          "63": "missed",
+          "64": "missed",
+          "65": "missed",
+          "66": "missed",
+          "67": "missed",
+          "69": "missed",
+          "70": "missed",
+          "71": "missed"
+        },
+        "s2n_blob_validate": {
+          "29": "missed",
+          "30": "missed",
+          "31": "missed",
+          "32": "missed",
+          "33": "missed",
+          "34": "missed",
+          "35": "missed",
+          "36": "missed",
+          "37": "missed"
+        },
+        "s2n_blob_zero": {
+          "50": "missed",
+          "51": "missed",
+          "52": "missed",
+          "53": "missed",
+          "54": "missed"
+        }
+      },
+      "utils/s2n_ensure.c": {
+        "s2n_ensure_memcpy_trace": {
+          "20": "missed",
+          "21": "missed",
+          "22": "missed",
+          "23": "missed",
+          "27": "missed",
+          "28": "missed"
+        }
+      },
+      "utils/s2n_random.c": {
+        "s2n_defend_if_forked": {
+          "134": "hit",
+          "135": "hit",
+          "136": "hit",
+          "137": "hit",
+          "139": "hit",
+          "141": "both",
+          "143": "both",
+          "144": "missed",
+          "145": "missed",
+          "146": "missed",
+          "149": "missed",
+          "150": "hit"
+        },
+        "s2n_get_mix_entropy": {
+          "120": "missed",
+          "122": "missed",
+          "124": "missed",
+          "125": "missed"
+        },
+        "s2n_get_private_random_data": {
+          "175": "missed",
+          "177": "missed",
+          "178": "missed",
+          "180": "missed",
+          "181": "missed",
+          "183": "missed",
+          "185": "missed",
+          "187": "missed",
+          "188": "missed",
+          "189": "missed",
+          "191": "missed",
+          "192": "missed"
+        },
+        "s2n_get_public_random_data": {
+          "154": "both",
+          "156": "missed",
+          "157": "missed",
+          "159": "missed",
+          "160": "missed",
+          "162": "missed",
+          "164": "missed",
+          "166": "missed",
+          "167": "missed",
+          "168": "missed",
+          "170": "missed",
+          "171": "hit"
+        },
+        "s2n_get_seed_entropy": {
+          "111": "missed",
+          "113": "missed",
+          "115": "missed",
+          "116": "missed"
+        },
+        "s2n_openssl_compat_rand": {
+          "293": "missed",
+          "295": "missed",
+          "296": "missed",
+          "298": "missed",
+          "299": "missed"
+        },
+        "s2n_rand_cleanup_thread": {
+          "427": "both",
+          "428": "both",
+          "430": "hit",
+          "431": "hit"
+        },
+        "s2n_rand_rdrand_impl": {
+          "453": "missed",
+          "454": "missed",
+          "455": "missed",
+          "466": "missed",
+          "468": "missed",
+          "469": "missed",
+          "470": "missed",
+          "471": "missed",
+          "473": "missed",
+          "527": "missed",
+          "529": "missed",
+          "532": "missed",
+          "535": "missed",
+          "537": "missed",
+          "539": "missed",
+          "541": "missed",
+          "542": "missed",
+          "544": "missed",
+          "548": "missed"
+        },
+        "s2n_rand_urandom_impl": {
+          "208": "missed",
+          "210": "missed",
+          "211": "missed",
+          "212": "missed",
+          "213": "missed",
+          "215": "missed",
+          "216": "missed",
+          "217": "missed",
+          "218": "missed",
+          "237": "missed",
+          "238": "missed",
+          "239": "missed",
+          "241": "missed",
+          "243": "missed",
+          "246": "missed",
+          "249": "missed",
+          "250": "missed",
+          "251": "missed",
+          "253": "missed",
+          "254": "missed"
+        }
+      },
+      "utils/s2n_result.c": {
+        "s2n_result_is_error": {
+          "92": "missed",
+          "93": "missed"
+        },
+        "s2n_result_is_ok": {
+          "86": "hit",
+          "87": "hit"
+        }
+      }
+    },
+    "function_coverage": {
+      "crypto/s2n_drbg.c": {
+        "s2n_drbg_bits": {
+          "hit": 0,
+          "percentage": 0.0,
+          "total": 20
+        },
+        "s2n_drbg_block_encrypt": {
+          "hit": 0,
+          "percentage": 0.0,
+          "total": 6
+        },
+        "s2n_drbg_generate": {
+          "hit": 0,
+          "percentage": 0.0,
+          "total": 9
+        },
+        "s2n_drbg_instantiate": {
+          "hit": 13,
+          "percentage": 0.5909090909090909,
+          "total": 22
+        },
+        "s2n_drbg_mix": {
+          "hit": 0,
+          "percentage": 0.0,
+          "total": 6
+        },
+        "s2n_drbg_mix_in_entropy": {
+          "hit": 0,
+          "percentage": 0.0,
+          "total": 10
+        },
+        "s2n_drbg_seed": {
+          "hit": 0,
+          "percentage": 0.0,
+          "total": 6
+        },
+        "s2n_drbg_update": {
+          "hit": 0,
+          "percentage": 0.0,
+          "total": 12
+        },
+        "s2n_drbg_wipe": {
+          "hit": 5,
+          "percentage": 0.625,
+          "total": 8
+        },
+        "s2n_increment_drbg_counter": {
+          "hit": 0,
+          "percentage": 0.0,
+          "total": 6
+        }
+      },
+      "tests/cbmc/aws-verification-model-for-libcrypto/source/evp_override.c": {
+        "EVP_CIPHER_CTX_free": {
+          "hit": 0,
+          "percentage": 0.0,
+          "total": 3
+        },
+        "EVP_CIPHER_CTX_get_key_length": {
+          "hit": 3,
+          "percentage": 1.0,
+          "total": 3
+        },
+        "EVP_CIPHER_CTX_new": {
+          "hit": 10,
+          "percentage": 1.0,
+          "total": 10
+        },
+        "EVP_CIPHER_CTX_reset": {
+          "hit": 3,
+          "percentage": 0.75,
+          "total": 4
+        },
+        "EVP_EncryptInit_ex": {
+          "hit": 7,
+          "percentage": 1.0,
+          "total": 7
+        },
+        "EVP_EncryptUpdate": {
+          "hit": 0,
+          "percentage": 0.0,
+          "total": 17
+        },
+        "EVP_aes_128_ecb": {
+          "hit": 2,
+          "percentage": 1.0,
+          "total": 2
+        }
+      },
+      "tests/cbmc/proofs/s2n_generate_new_client_session_id/s2n_generate_new_client_session_id_harness.c": {
+        "s2n_generate_new_client_session_id_harness": {
+          "hit": 4,
+          "percentage": 1.0,
+          "total": 4
+        }
+      },
+      "tests/cbmc/stubs/s2n_calculate_stacktrace.c": {
+        "s2n_calculate_stacktrace": {
+          "hit": 1,
+          "percentage": 1.0,
+          "total": 1
+        }
+      },
+      "tls/s2n_handshake_io.c": {
+        "s2n_generate_new_client_session_id": {
+          "hit": 6,
+          "percentage": 0.75,
+          "total": 8
+        }
+      },
+      "utils/s2n_blob.c": {
+        "s2n_blob_init": {
+          "hit": 0,
+          "percentage": 0.0,
+          "total": 6
+        },
+        "s2n_blob_slice": {
+          "hit": 0,
+          "percentage": 0.0,
+          "total": 12
+        },
+        "s2n_blob_validate": {
+          "hit": 0,
+          "percentage": 0.0,
+          "total": 9
+        },
+        "s2n_blob_zero": {
+          "hit": 0,
+          "percentage": 0.0,
+          "total": 5
+        }
+      },
+      "utils/s2n_ensure.c": {
+        "s2n_ensure_memcpy_trace": {
+          "hit": 0,
+          "percentage": 0.0,
+          "total": 6
+        }
+      },
+      "utils/s2n_random.c": {
+        "s2n_defend_if_forked": {
+          "hit": 8,
+          "percentage": 0.6666666666666666,
+          "total": 12
+        },
+        "s2n_get_mix_entropy": {
+          "hit": 0,
+          "percentage": 0.0,
+          "total": 4
+        },
+        "s2n_get_private_random_data": {
+          "hit": 0,
+          "percentage": 0.0,
+          "total": 12
+        },
+        "s2n_get_public_random_data": {
+          "hit": 2,
+          "percentage": 0.16666666666666666,
+          "total": 12
+        },
+        "s2n_get_seed_entropy": {
+          "hit": 0,
+          "percentage": 0.0,
+          "total": 4
+        },
+        "s2n_openssl_compat_rand": {
+          "hit": 0,
+          "percentage": 0.0,
+          "total": 5
+        },
+        "s2n_rand_cleanup_thread": {
+          "hit": 4,
+          "percentage": 1.0,
+          "total": 4
+        },
+        "s2n_rand_rdrand_impl": {
+          "hit": 0,
+          "percentage": 0.0,
+          "total": 19
+        },
+        "s2n_rand_urandom_impl": {
+          "hit": 0,
+          "percentage": 0.0,
+          "total": 20
+        }
+      },
+      "utils/s2n_result.c": {
+        "s2n_result_is_error": {
+          "hit": 0,
+          "percentage": 0.0,
+          "total": 2
+        },
+        "s2n_result_is_ok": {
+          "hit": 2,
+          "percentage": 1.0,
+          "total": 2
+        }
+      }
+    },
+    "line_coverage": {
+      "crypto/s2n_drbg.c": {
+        "34": "missed",
+        "35": "missed",
+        "36": "missed",
+        "41": "missed",
+        "42": "missed",
+        "43": "missed",
+        "47": "missed",
+        "48": "missed",
+        "49": "missed",
+        "50": "missed",
+        "52": "missed",
+        "53": "missed",
+        "57": "missed",
+        "58": "missed",
+        "59": "missed",
+        "61": "missed",
+        "62": "missed",
+        "63": "missed",
+        "66": "missed",
+        "67": "missed",
+        "68": "missed",
+        "69": "missed",
+        "70": "missed",
+        "72": "missed",
+        "73": "missed",
+        "76": "missed",
+        "77": "missed",
+        "78": "missed",
+        "79": "missed",
+        "81": "missed",
+        "83": "missed",
+        "84": "missed",
+        "88": "missed",
+        "89": "missed",
+        "91": "missed",
+        "93": "missed",
+        "95": "missed",
+        "98": "missed",
+        "99": "missed",
+        "100": "missed",
+        "103": "missed",
+        "105": "missed",
+        "107": "missed",
+        "108": "missed",
+        "112": "missed",
+        "113": "missed",
+        "114": "missed",
+        "116": "missed",
+        "118": "missed",
+        "119": "missed",
+        "120": "missed",
+        "122": "missed",
+        "124": "missed",
+        "125": "missed",
+        "129": "missed",
+        "131": "missed",
+        "132": "missed",
+        "134": "missed",
+        "136": "missed",
+        "137": "missed",
+        "141": "missed",
+        "143": "missed",
+        "144": "missed",
+        "146": "missed",
+        "148": "missed",
+        "149": "missed",
+        "153": "both",
+        "155": "hit",
+        "156": "both",
+        "158": "hit",
+        "160": "hit",
+        "161": "hit",
+        "162": "both",
+        "163": "hit",
+        "164": "missed",
+        "165": "missed",
+        "166": "missed",
+        "168": "missed",
+        "171": "both",
+        "172": "both",
+        "177": "hit",
+        "178": "both",
+        "181": "missed",
+        "182": "missed",
+        "184": "missed",
+        "187": "missed",
+        "189": "missed",
+        "190": "hit",
+        "194": "missed",
+        "195": "missed",
+        "196": "missed",
+        "198": "missed",
+        "203": "missed",
+        "204": "missed",
+        "205": "missed",
+        "207": "missed",
+        "208": "missed",
+        "212": "both",
+        "213": "hit",
+        "214": "missed",
+        "216": "missed",
+        "217": "missed",
+        "220": "hit",
+        "221": "hit",
+        "222": "hit"
+      },
+      "tests/cbmc/aws-verification-model-for-libcrypto/source/evp_override.c": {
+        "422": "hit",
+        "423": "hit",
+        "429": "hit",
+        "430": "hit",
+        "431": "hit",
+        "432": "hit",
+        "433": "hit",
+        "434": "hit",
+        "435": "hit",
+        "436": "hit",
+        "438": "hit",
+        "439": "hit",
+        "503": "missed",
+        "504": "missed",
+        "506": "missed",
+        "518": "hit",
+        "519": "hit",
+        "520": "hit",
+        "521": "hit",
+        "522": "hit",
+        "523": "hit",
+        "524": "hit",
+        "563": "missed",
+        "564": "missed",
+        "565": "missed",
+        "566": "missed",
+        "567": "missed",
+        "568": "missed",
+        "570": "missed",
+        "571": "missed",
+        "572": "missed",
+        "573": "missed",
+        "575": "missed",
+        "576": "missed",
+        "585": "missed",
+        "586": "missed",
+        "587": "missed",
+        "588": "missed",
+        "589": "missed",
+        "1107": "hit",
+        "1108": "missed",
+        "1109": "hit",
+        "1110": "hit",
+        "1114": "hit",
+        "1115": "hit",
+        "1116": "hit"
+      },
+      "tests/cbmc/proofs/s2n_generate_new_client_session_id/s2n_generate_new_client_session_id_harness.c": {
+        "21": "hit",
+        "24": "hit",
+        "27": "hit",
+        "32": "hit"
+      },
+      "tests/cbmc/stubs/s2n_calculate_stacktrace.c": {
+        "20": "hit"
+      },
+      "tls/s2n_handshake_io.c": {
+        "700": "both",
+        "701": "hit",
+        "702": "hit",
+        "705": "both",
+        "706": "missed",
+        "707": "missed",
+        "709": "hit",
+        "710": "hit"
+      },
+      "utils/s2n_blob.c": {
+        "29": "missed",
+        "30": "missed",
+        "31": "missed",
+        "32": "missed",
+        "33": "missed",
+        "34": "missed",
+        "35": "missed",
+        "36": "missed",
+        "37": "missed",
+        "41": "missed",
+        "42": "missed",
+        "43": "missed",
+        "44": "missed",
+        "45": "missed",
+        "46": "missed",
+        "50": "missed",
+        "51": "missed",
+        "52": "missed",
+        "53": "missed",
+        "54": "missed",
+        "58": "missed",
+        "59": "missed",
+        "61": "missed",
+        "62": "missed",
+        "63": "missed",
+        "64": "missed",
+        "65": "missed",
+        "66": "missed",
+        "67": "missed",
+        "69": "missed",
+        "70": "missed",
+        "71": "missed"
+      },
+      "utils/s2n_ensure.c": {
+        "20": "missed",
+        "21": "missed",
+        "22": "missed",
+        "23": "missed",
+        "27": "missed",
+        "28": "missed"
+      },
+      "utils/s2n_random.c": {
+        "111": "missed",
+        "113": "missed",
+        "115": "missed",
+        "116": "missed",
+        "120": "missed",
+        "122": "missed",
+        "124": "missed",
+        "125": "missed",
+        "134": "hit",
+        "135": "hit",
+        "136": "hit",
+        "137": "hit",
+        "139": "hit",
+        "141": "both",
+        "143": "both",
+        "144": "missed",
+        "145": "missed",
+        "146": "missed",
+        "149": "missed",
+        "150": "hit",
+        "154": "both",
+        "156": "missed",
+        "157": "missed",
+        "159": "missed",
+        "160": "missed",
+        "162": "missed",
+        "164": "missed",
+        "166": "missed",
+        "167": "missed",
+        "168": "missed",
+        "170": "missed",
+        "171": "hit",
+        "175": "missed",
+        "177": "missed",
+        "178": "missed",
+        "180": "missed",
+        "181": "missed",
+        "183": "missed",
+        "185": "missed",
+        "187": "missed",
+        "188": "missed",
+        "189": "missed",
+        "191": "missed",
+        "192": "missed",
+        "208": "missed",
+        "210": "missed",
+        "211": "missed",
+        "212": "missed",
+        "213": "missed",
+        "215": "missed",
+        "216": "missed",
+        "217": "missed",
+        "218": "missed",
+        "237": "missed",
+        "238": "missed",
+        "239": "missed",
+        "241": "missed",
+        "243": "missed",
+        "246": "missed",
+        "249": "missed",
+        "250": "missed",
+        "251": "missed",
+        "253": "missed",
+        "254": "missed",
+        "293": "missed",
+        "295": "missed",
+        "296": "missed",
+        "298": "missed",
+        "299": "missed",
+        "427": "both",
+        "428": "both",
+        "430": "hit",
+        "431": "hit",
+        "453": "missed",
+        "454": "missed",
+        "455": "missed",
+        "466": "missed",
+        "468": "missed",
+        "469": "missed",
+        "470": "missed",
+        "471": "missed",
+        "473": "missed",
+        "527": "missed",
+        "529": "missed",
+        "532": "missed",
+        "535": "missed",
+        "537": "missed",
+        "539": "missed",
+        "541": "missed",
+        "542": "missed",
+        "544": "missed",
+        "548": "missed"
+      },
+      "utils/s2n_result.c": {
+        "86": "hit",
+        "87": "hit",
+        "92": "missed",
+        "93": "missed"
+      }
+    },
+    "overall_coverage": {
+      "hit": 70,
+      "percentage": 0.2348993288590604,
+      "total": 298
+    }
+  }
+}

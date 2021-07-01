@@ -11,26 +11,14 @@
 # implied. See the License for the specific language governing permissions and
 # limitations under the License.
 
-###########
-#Use the default set of CBMC flags
-CHECKFLAGS +=
-
-PROOF_UID = s2n_conn_set_handshake_no_client_cert
+PROOF_UID = s2n_handshake_type_set_flag
 HARNESS_ENTRY = $(PROOF_UID)_harness
 HARNESS_FILE = $(HARNESS_ENTRY).c
 
-CHECK_FUNCTION_CONTRACTS = s2n_conn_set_handshake_no_client_cert
-
-USE_FUNCTION_CONTRACTS += s2n_connection_get_client_auth_type
-USE_FUNCTION_CONTRACTS += s2n_handshake_type_set_flag
+CHECK_FUNCTION_CONTRACTS = s2n_handshake_type_set_flag
 
 PROOF_SOURCES += $(PROOFDIR)/$(HARNESS_FILE)
 
-PROJECT_SOURCES += $(SRCDIR)/tls/s2n_connection.c
 PROJECT_SOURCES += $(SRCDIR)/tls/s2n_handshake_type.c
-PROJECT_SOURCES += $(SRCDIR)/tls/s2n_handshake_io.c
-PROJECT_SOURCES += $(SRCDIR)/utils/s2n_result.c
-
-UNWINDSET +=
 
 include ../Makefile.common

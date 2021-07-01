@@ -15,11 +15,12 @@
 
 #include "api/s2n.h"
 
-void s2n_conn_set_handshake_no_client_cert_harness()
+void s2n_connection_get_client_auth_type_harness()
 {
     /* Non-deterministic input. */
-    struct s2n_connection *s2n_connection;
+    struct s2n_connection *conn;
+    s2n_cert_auth_type *client_cert_auth_type;
     
     /* Operation under verification. */
-    s2n_conn_set_handshake_no_client_cert(s2n_connection);
+    s2n_connection_get_client_auth_type(conn, client_cert_auth_type);
 }

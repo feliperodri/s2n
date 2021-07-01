@@ -11,24 +11,23 @@
 # implied. See the License for the specific language governing permissions and
 # limitations under the License.
 
-###########
-#Use the default set of CBMC flags
-CHECKFLAGS +=
+# Use the default set of CBMC flags.
+CBMCFLAGS +=
 
-PROOF_UID = s2n_conn_set_handshake_no_client_cert
+PROOF_UID = s2n_generate_new_client_session_id
 HARNESS_ENTRY = $(PROOF_UID)_harness
 HARNESS_FILE = $(HARNESS_ENTRY).c
 
-CHECK_FUNCTION_CONTRACTS = s2n_conn_set_handshake_no_client_cert
-
-USE_FUNCTION_CONTRACTS += s2n_connection_get_client_auth_type
-USE_FUNCTION_CONTRACTS += s2n_handshake_type_set_flag
-
 PROOF_SOURCES += $(PROOFDIR)/$(HARNESS_FILE)
+PROOF_SOURCES += $(PROOF_STUB)/s2n_calculate_stacktrace.c
+PROOF_SOURCES += $(OPENSSL_SOURCE)/evp_override.c
 
-PROJECT_SOURCES += $(SRCDIR)/tls/s2n_connection.c
-PROJECT_SOURCES += $(SRCDIR)/tls/s2n_handshake_type.c
+PROJECT_SOURCES += $(SRCDIR)/crypto/s2n_drbg.c
 PROJECT_SOURCES += $(SRCDIR)/tls/s2n_handshake_io.c
+#PROJECT_SOURCES += $(SRCDIR)/tls/s2n_handshake.c
+PROJECT_SOURCES += $(SRCDIR)/utils/s2n_blob.c
+PROJECT_SOURCES += $(SRCDIR)/utils/s2n_ensure.c
+PROJECT_SOURCES += $(SRCDIR)/utils/s2n_random.c
 PROJECT_SOURCES += $(SRCDIR)/utils/s2n_result.c
 
 UNWINDSET +=
