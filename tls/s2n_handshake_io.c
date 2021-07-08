@@ -859,8 +859,13 @@ skip_cache_lookup:
 }
 
 int s2n_conn_set_handshake_no_client_cert(struct s2n_connection *conn)
-__CPROVER_requires(conn != NULL)
-__CPROVER_assigns(s2n_errno, s2n_debug_str)
+/* Preconditions. */
+__CPROVER_requires(__CPROVER_is_fresh(conn, sizeof(*conn)))
+__CPROVER_requires(__CPROVER_is_fresh(conn->config, sizeof(*(conn->config))))
+/* Postconditions. */
+__CPROVER_ensures(__CPROVER_return_value == S2N_SUCCESS || __CPROVER_return_value == S2N_FAILURE)
+/* Write set. */
+__CPROVER_assigns(conn->handshake.handshake_type)
 {
     s2n_cert_auth_type client_cert_auth_type;
     POSIX_GUARD(s2n_connection_get_client_auth_type(conn, &client_cert_auth_type));
@@ -868,7 +873,7 @@ __CPROVER_assigns(s2n_errno, s2n_debug_str)
 
     POSIX_GUARD_RESULT(s2n_handshake_type_set_flag(conn, NO_CLIENT_CERT));
 
-    return 0;
+    return S2N_SUCCESS;
 }
 
 const char *s2n_connection_get_last_message_name(struct s2n_connection *conn)

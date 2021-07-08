@@ -897,12 +897,18 @@ int s2n_connection_get_protocol_preferences(struct s2n_connection *conn, struct 
 }
 
 int s2n_connection_get_client_auth_type(struct s2n_connection *conn, s2n_cert_auth_type *client_cert_auth_type)
-__CPROVER_requires(conn != NULL && client_cert_auth_type != NULL)
+/* Preconditions. */
+__CPROVER_requires(__CPROVER_is_fresh(conn, sizeof(*conn)))
+__CPROVER_requires(__CPROVER_is_fresh(conn->config, sizeof(*(conn->config))))
+__CPROVER_requires(__CPROVER_is_fresh(client_cert_auth_type, sizeof(*client_cert_auth_type)))
+/* Postconditions. */
+__CPROVER_ensures((__CPROVER_return_value == S2N_SUCCESS) ==> (conn->client_cert_auth_type_overridden ==> *client_cert_auth_type == conn->client_cert_auth_type))
+__CPROVER_ensures((__CPROVER_return_value == S2N_SUCCESS) ==> (!(conn->client_cert_auth_type_overridden) ==> *client_cert_auth_type == conn->config->client_cert_auth_type))
+/* Write set. */
 __CPROVER_assigns(*client_cert_auth_type)
-__CPROVER_ensures(__CPROVER_return_value == 0 && (*client_cert_auth_type == S2N_CERT_AUTH_NONE || *client_cert_auth_type == S2N_CERT_AUTH_REQUIRED || *client_cert_auth_type == S2N_CERT_AUTH_OPTIONAL))
 {
-    // POSIX_ENSURE_REF(conn);
-    // POSIX_ENSURE_REF(client_cert_auth_type);
+    POSIX_ENSURE_REF(conn);
+    POSIX_ENSURE_REF(client_cert_auth_type);
 
     if (conn->client_cert_auth_type_overridden) {
         *client_cert_auth_type = conn->client_cert_auth_type;
@@ -910,7 +916,7 @@ __CPROVER_ensures(__CPROVER_return_value == 0 && (*client_cert_auth_type == S2N_
         *client_cert_auth_type = conn->config->client_cert_auth_type;
     }
 
-    return 0;
+    return S2N_SUCCESS;
 }
 
 int s2n_connection_set_client_auth_type(struct s2n_connection *conn, s2n_cert_auth_type client_cert_auth_type)

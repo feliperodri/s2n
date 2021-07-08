@@ -18,11 +18,17 @@
 #include "utils/s2n_safety.h"
 
 S2N_RESULT s2n_handshake_type_set_flag(struct s2n_connection *conn, s2n_handshake_type_flag flag)
-__CPROVER_requires(conn != NULL && (flag == INITIAL || flag == NEGOTIATED || flag == FULL_HANDSHAKE || flag == CLIENT_AUTH || flag == NO_CLIENT_CERT))
-// __CPROVER_assigns(conn->handshake.handshake_type)
-__CPROVER_ensures(__CPROVER_return_value == S2N_RESULT_OK)
+/* Preconditions. */
+__CPROVER_requires(conn == NULL || __CPROVER_is_fresh(conn, sizeof(*conn)))
+/* Postconditions. */
+__CPROVER_ensures((__CPROVER_return_value == S2N_RESULT_OK) ==> (conn != NULL))
+/* Not supported. */
+// __CPROVER_ensures((__CPROVER_return_value == S2N_RESULT_ERROR) ==> (conn->handshake.handshake_type == (__CPROVER_old(conn->handshake.handshake_type) | flag)))
+// __CPROVER_ensures((__CPROVER_return_value == S2N_RESULT_ERROR) ==> (conn->handshake.handshake_type == __CPROVER_old(conn->handshake.handshake_type)))
+/* Write set. */
+__CPROVER_assigns(conn->handshake.handshake_type)
 {
-    // RESULT_ENSURE_REF(conn);
+    RESULT_ENSURE_REF(conn);
     conn->handshake.handshake_type |= flag;
     return S2N_RESULT_OK;
 }
